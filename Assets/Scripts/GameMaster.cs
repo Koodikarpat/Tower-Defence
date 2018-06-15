@@ -19,6 +19,7 @@ public class GameMaster : MonoBehaviour {
     //Awake is always called before any Start functions
     void Awake()
     {
+        goldupdate(65);
         //Check if instance already exists
         if (instance == null)
 
@@ -67,7 +68,7 @@ public class GameMaster : MonoBehaviour {
     public void goldupdate(int amount)
     {
     goldamount += amount;
-        money.text = "Gold : " + goldamount;
+        money.text = "Currency : " + goldamount;
         
 
     }

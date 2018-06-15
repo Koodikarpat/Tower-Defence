@@ -17,7 +17,7 @@ public class Shop : MonoBehaviour
     {
         Debug.Log("Standard Turret Selected");
         buildManager.setTurretToBuild(buildManager.standardTurretPrefab);
-	}
+    }
 
     public void PurchaseAnotherTurret()
     {
