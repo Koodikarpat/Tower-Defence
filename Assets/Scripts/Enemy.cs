@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 
-public class Enemy : MonoBehaviour {
-
+public class Enemy : MonoBehaviour
+{
     public float speed;
     private Transform target;
     private int wavepointIndex = 0;
@@ -18,12 +18,13 @@ public class Enemy : MonoBehaviour {
     void Update()
     {
         Vector3 dir = target.position - transform.position;
-        transform.Translate(dir.normalized*speed*Time.deltaTime, Space.World);
+        transform.Translate(dir.normalized * speed * Time.deltaTime, Space.World);
 
         if (Vector3.Distance(transform.position, target.position) <= 0.2f)
         {
             GetNextWaypoint();
         }
+
     }
 
     void GetNextWaypoint()
@@ -35,10 +36,12 @@ public class Enemy : MonoBehaviour {
 
         target = target.GetComponent<waypoint>().getwaypoint();
     }
-    public void takeDamage( int damage)
+    public void takeDamage(int damage)
     {
         health -= damage;
-        if ( health <= 0) { Destroy(gameObject); }
-    }
+        if (health <= 0) { Destroy(gameObject); GameMaster.instance.goldupdate(10); }
 
+
+    }
 }
+
