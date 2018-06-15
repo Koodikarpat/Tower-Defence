@@ -7,7 +7,8 @@ public class Tower : MonoBehaviour {
 
     public int health = 100;
     public Text healthText;
-    private bool gameEnded = false;
+    private bool gameEnded=false;
+    public GameObject gameManager;
 
     void Update()
     {
@@ -25,12 +26,9 @@ public class Tower : MonoBehaviour {
             health -= amount;
             if (health <= 0)
             {
-                EndGame();
+                gameManager.GetComponent<GameManagerScript>().EndGame();
             }
         }
     }
-    void EndGame()
-    {
-        gameEnded = true;
-    }
+    
 }

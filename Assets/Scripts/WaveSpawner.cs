@@ -31,6 +31,7 @@ public class WaveSpawner : MonoBehaviour {
             yield return new WaitForSeconds(0.4f);
         }
         waveIndex++;
+        GameManagerScript.Rounds++;
     }
 
     void SpawnEnemy()
