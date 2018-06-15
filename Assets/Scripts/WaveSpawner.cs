@@ -11,6 +11,7 @@ public class WaveSpawner : MonoBehaviour {
     private int waveIndex = 1;
     public Text waveCountdownText;
 
+
     void Update()
     {
         if (countdown <= 0f)
