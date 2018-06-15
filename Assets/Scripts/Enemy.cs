@@ -29,8 +29,7 @@ public class Enemy : MonoBehaviour {
             Destroy(gameObject);
         }
 
-        wavepointIndex++;
-        target = Waypoints.points[wavepointIndex];
+        target = target.GetComponent<waypoint>().getwaypoint();
     }
 
 }
