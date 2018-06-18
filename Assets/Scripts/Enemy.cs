@@ -33,14 +33,18 @@ public class Enemy : MonoBehaviour
 
     void GetNextWaypoint()
     {
-        if (wavepointIndex >= Waypoints.points.Length - 1)
+        if (wavepointIndex <= Waypoints.points.Length - 2)
         {
-            Destroy(gameObject);
+
+            wavepointIndex++;
+            target = Waypoints.points[wavepointIndex];
+
         }
-
-
-        wavepointIndex++;
-        target = Waypoints.points[wavepointIndex];
+        else {
+            GameMaster.Lives--;
+            Destroy(gameObject);
+            GameMaster.EnemiesAlive--;
+        }
 
         //target = target.GetComponent<waypoint>().getwaypoint();
     }
@@ -48,13 +52,14 @@ public class Enemy : MonoBehaviour
     {
         health -= damage;
 
-        //healthbar.fillAmount = health / startinghealth;
+        healthbar.fillAmount = health / startinghealth;
     
         if ( health <= 0) {
             GameMaster.instance.goldupdate(15);
             Destroy(gameObject);
+            GameMaster.EnemiesAlive--;
         }
-        GameMaster.instance.enemies--;
+
     }
 }
 

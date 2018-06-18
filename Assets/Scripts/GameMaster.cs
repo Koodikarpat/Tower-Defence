@@ -8,12 +8,19 @@ public class GameMaster : MonoBehaviour {
 
     public int goldamount = 0;
     public Text money;
+    public Text roundcount;
+    public Text Livescounter;
+
+    public Wave[] waves;
+
+    public static int Rounds = 0;
+
+    public static int Lives = 3;
  
-    public Transform enemyPreFab;
     public Transform spawnPoint;
     public float timeBetweenWaves = 5f;
     private float countdown = 2.5f;
-    public int waveIndex = 1;
+    public int waveIndex = 0;
     public Text waveCountdownText;
 
     public static GameMaster instance = null;              //Static instance of GameManager which allows it to be accessed by any other script.
@@ -42,6 +49,23 @@ public class GameMaster : MonoBehaviour {
     void Update()
     {
 
+        Livescounter.text = "Lives: " + Lives;
+
+        if (EnemiesAlive > 0)
+        {
+
+            return;
+
+        }
+        else
+        {
+            if (waveIndex == waves.Length)
+            {
+                
+                GameWon();
+                this.enabled = false;
+            }
+        }
         if (countdown <= 0f)
             {
                 StartCoroutine(SpawnWave());
@@ -55,26 +79,37 @@ public class GameMaster : MonoBehaviour {
 
         waveCountdownText.text = Mathf.Round(countdown).ToString();
 
-        
+
+
+
+
+        if (waveIndex < waves.Length)
+        {
+            roundcount.text = "Waves: " + (waveIndex + 1) + "/" + waves.Length;
+        }
+
     }
 
     IEnumerator SpawnWave()
     {
-        {
-            for (int i = 0; i < waveIndex; i++)
+            Rounds++;
+            Wave wave = waves[waveIndex];
+
+            EnemiesAlive = wave.count;
+            for (int i = 0; i < wave.count; i++)
             {
-                SpawnEnemy();
-                yield return new WaitForSeconds(0.4f);
+                SpawnEnemy(wave.enemy);
+                yield return new WaitForSeconds(1f / wave.rate);
             }
+
             waveIndex++;
 
-        }
+
     }
 
-    void SpawnEnemy()
+    void SpawnEnemy(GameObject enemy)
     {
-        Instantiate(enemyPreFab, spawnPoint.position, spawnPoint.rotation);
-        EnemiesAlive++;
+        Instantiate(enemy, spawnPoint.position, spawnPoint.rotation);
     }
 
     public void goldupdate(int amount)
@@ -85,8 +120,13 @@ public class GameMaster : MonoBehaviour {
 
     }
 
-    void EndPath()
+    void GameLost()
     {
+        Debug.Log("LEVEL LOST");
+    }
 
+    void GameWon()
+    {
+        Debug.Log("LEVEL WON");
     }
 }
