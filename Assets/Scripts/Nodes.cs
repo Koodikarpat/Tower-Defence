@@ -6,7 +6,7 @@ public class Nodes : MonoBehaviour {
     private Color startColor;
     public Color hoverColor;
 
-    public Vector3 positionOffset;
+    public Vector3 positionOffset = new Vector3(0,0, -1);
 
     public GameObject turret;
 
@@ -25,17 +25,22 @@ public class Nodes : MonoBehaviour {
 
     void OnMouseDown()
     {
-        if (buildManager.getTurretToBuild() == null)
+        if (GameMaster.instance.goldamount >= 15)
+        {
+            if (buildManager.getTurretToBuild() == null)
             return;
 
-        if(turret != null)
-        {
-            Debug.Log("Can't build there! - TODO: Display on screen.");
-            return;
+            if (turret != null)
+            {
+                Debug.Log("Can't build there! - TODO: Display on screen.");
+                return;
+            }
+
+            GameObject turretToBuild = buildManager.getTurretToBuild();
+            turret = (GameObject)Instantiate(turretToBuild, new Vector3(transform.position.x, transform.position.y, -1), transform.rotation);
+            GameMaster.instance.goldupdate(-15);
         }
 
-        GameObject turretToBuild = buildManager.getTurretToBuild();
-        turret = (GameObject)Instantiate(turretToBuild, transform.position + positionOffset, transform.rotation);
     }
 
     void OnMouseEnter()

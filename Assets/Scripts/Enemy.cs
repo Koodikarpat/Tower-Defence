@@ -42,7 +42,7 @@ public class Enemy : MonoBehaviour
         wavepointIndex++;
         target = Waypoints.points[wavepointIndex];
 
-        target = target.GetComponent<waypoint>().getwaypoint();
+        //target = target.GetComponent<waypoint>().getwaypoint();
     }
     public void takeDamage(int damage)
     {
@@ -50,8 +50,10 @@ public class Enemy : MonoBehaviour
 
         //healthbar.fillAmount = health / startinghealth;
     
-        if ( health <= 0) { Destroy(gameObject); GameMaster.EnemiesAlive--; }
-
+        if ( health <= 0) {
+            GameMaster.instance.goldupdate(15);
+            Destroy(gameObject);
+        }
         GameMaster.instance.enemies--;
     }
 }
