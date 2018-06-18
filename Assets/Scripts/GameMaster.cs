@@ -6,7 +6,7 @@ public class GameMaster : MonoBehaviour {
 
     public static int EnemiesAlive = 0;
 
-    public int goldamount = 0;
+ 
     public static int goldamount = 0;
     public Text money;
     public Text roundcount;
