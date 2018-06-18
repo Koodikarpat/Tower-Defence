@@ -14,6 +14,8 @@ public class GameOver : MonoBehaviour {
     public void Retry()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        GameManagerScript.Rounds = 0;
+        roundsText.text = "0";
     }
 
     public void Menu()
