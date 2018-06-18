@@ -48,9 +48,11 @@ public class Enemy : MonoBehaviour
     {
         health -= damage;
 
-        healthbar.fillAmount = health / startinghealth;
+        //healthbar.fillAmount = health / startinghealth;
     
-        if ( health <= 0) { Destroy(gameObject); }
+        if ( health <= 0) { Destroy(gameObject); GameMaster.EnemiesAlive--; }
+
+        GameMaster.instance.enemies--;
     }
 }
 

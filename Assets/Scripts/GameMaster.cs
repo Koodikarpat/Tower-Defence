@@ -4,14 +4,16 @@ using UnityEngine.UI;
 
 public class GameMaster : MonoBehaviour {
 
+    public static int EnemiesAlive = 0;
+
     public int goldamount = 0;
     public Text money;
-
+ 
     public Transform enemyPreFab;
     public Transform spawnPoint;
     public float timeBetweenWaves = 5f;
     private float countdown = 2.5f;
-    private int waveIndex = 1;
+    public int waveIndex = 1;
     public Text waveCountdownText;
 
     public static GameMaster instance = null;              //Static instance of GameManager which allows it to be accessed by any other script.
@@ -38,12 +40,18 @@ public class GameMaster : MonoBehaviour {
 
     void Update()
     {
+
         if (countdown <= 0f)
-        {
-            StartCoroutine(SpawnWave());
-            countdown = timeBetweenWaves;
-        }
+            {
+                StartCoroutine(SpawnWave());
+                countdown = timeBetweenWaves;
+                return;
+            }
+        
         countdown -=Time.deltaTime;
+
+        countdown = Mathf.Clamp(countdown, 0f, Mathf.Infinity);
+
         waveCountdownText.text = Mathf.Round(countdown).ToString();
 
         
@@ -51,17 +59,21 @@ public class GameMaster : MonoBehaviour {
 
     IEnumerator SpawnWave()
     {
-        for(int i=0; i<waveIndex; i++)
         {
-            SpawnEnemy();
-            yield return new WaitForSeconds(0.4f);
+            for (int i = 0; i < waveIndex; i++)
+            {
+                SpawnEnemy();
+                yield return new WaitForSeconds(0.4f);
+            }
+            waveIndex++;
+
         }
-        waveIndex++;
     }
 
     void SpawnEnemy()
     {
         Instantiate(enemyPreFab, spawnPoint.position, spawnPoint.rotation);
+        EnemiesAlive++;
     }
 
     public void goldupdate(int amount)
@@ -69,6 +81,11 @@ public class GameMaster : MonoBehaviour {
     goldamount += amount;
         money.text = "Gold : " + goldamount;
         
+
+    }
+
+    void EndPath()
+    {
 
     }
 }
