@@ -6,7 +6,11 @@ public class Nodes : MonoBehaviour {
     private Color startColor;
     public Color hoverColor;
 
-    public Vector3 positionOffset = new Vector3(0,0, -1);
+    public float targetTime = 2f;
+
+    public GameObject text;
+
+    public Vector3 positionOffset = new Vector3(0, 0, -1);
 
     public GameObject turret;
 
@@ -15,20 +19,23 @@ public class Nodes : MonoBehaviour {
     BuildManager buildManager;
 
 
-	void Start ()
+    void Start()
     {
         rend = GetComponent<SpriteRenderer>();
         startColor = rend.material.color;
 
         buildManager = BuildManager.instance;
-	}
+
+        text = GameObject.Find("Canvas").transform.GetChild(4).gameObject;
+    }
 
     void OnMouseDown()
     {
-        if (GameMaster.instance.goldamount >= 15)
+        GameObject turretToBuild = buildManager.getTurretToBuild();
+        if (GameMaster.instance.goldamount >= turretToBuild.GetComponent<turret>().cost)
         {
             if (buildManager.getTurretToBuild() == null)
-            return;
+                return;
 
             if (turret != null)
             {
@@ -36,11 +43,19 @@ public class Nodes : MonoBehaviour {
                 return;
             }
 
-            GameObject turretToBuild = buildManager.getTurretToBuild();
+            // GameObject turretToBuild = buildManager.getTurretToBuild();
             turret = (GameObject)Instantiate(turretToBuild, new Vector3(transform.position.x, transform.position.y, -1), transform.rotation);
-            GameMaster.instance.goldupdate(-15);
-        }
+            GameMaster.instance.goldupdate(-turret.GetComponent<turret>().cost);
 
+            if (text.activeSelf)
+            {
+                text.SetActive(false);
+
+            }
+        }
+        else
+            text.SetActive(true);
+        //timerEnded();
     }
 
     void OnMouseEnter()
@@ -54,5 +69,26 @@ public class Nodes : MonoBehaviour {
     void OnMouseExit()
     {
         rend.material.color = startColor;
+    }
+
+    void Update()
+    {
+
+        if (targetTime <= 0.0f)
+        {
+            timerEnded();
+        }
+
+        if (text.activeSelf)
+        {
+            targetTime -= Time.deltaTime;
+        }
+
+    }
+
+    void timerEnded()
+    {
+        text.SetActive(false);
+        targetTime = 2f;
     }
 }
