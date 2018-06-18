@@ -122,7 +122,9 @@ public class GameMaster : MonoBehaviour {
     public void goldupdate(int amount)
     {
     goldamount += amount;
-        money.text = "Currency : " + goldamount;
+        money.text = "$" + goldamount;
+        
+
     }
 
     void GameLost()
