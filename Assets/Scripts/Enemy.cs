@@ -1,15 +1,22 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 
-public class Enemy : MonoBehaviour {
-
+public class Enemy : MonoBehaviour
+{
     public float speed;
     public int damage = 20;
     private Transform target;
     public GameObject targetTower;
     private int wavepointIndex = 0;
+    private int startinghealth = 100;
+    public Image healthbar;
+    private float health;
     private float distance;
     private float travelledDistance=0;
     private Vector3 previousPosition;
+
+
+
 
     void Start()
     {
@@ -17,12 +24,13 @@ public class Enemy : MonoBehaviour {
         targetTower = GameObject.Find("Tower");
         previousPosition = transform.position;
         distance = Vector3.Distance(transform.position, target.position);
+        health = startinghealth;
     }
 
     void Update()
     {
-        Vector3 dir = target.position - transform.position;
-        transform.Translate(dir.normalized * speed * Time.deltaTime, Space.World);
+        Vector3 dir = (target.position - transform.position).normalized;
+        transform.Translate(dir * speed * Time.deltaTime, Space.World);
 
         if (travelledDistance >= distance)
         {
@@ -44,10 +52,22 @@ public class Enemy : MonoBehaviour {
             Destroy(gameObject);
             Damage();
         }
-        if (wavepointIndex < Waypoints.points.Length - 1)
-        {
-            wavepointIndex++;
-            target = Waypoints.points[wavepointIndex];
+
+
+        wavepointIndex++;
+        target = Waypoints.points[wavepointIndex];
+
+        //target = target.GetComponent<waypoint>().getwaypoint();
+    }
+    public void takeDamage(int damage)
+    {
+        health -= damage;
+
+        healthbar.fillAmount = health / startinghealth;
+    
+        if ( health <= 0) {
+            GameMaster.instance.goldupdate(15);
+            Destroy(gameObject);
         }
     }
 
@@ -57,3 +77,4 @@ public class Enemy : MonoBehaviour {
     }
 
 }
+
