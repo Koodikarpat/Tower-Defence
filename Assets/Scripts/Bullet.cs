@@ -6,7 +6,7 @@ public class Bullet : MonoBehaviour {
 
     private Transform target;
 
-    public float speed = 70f;
+    public float speed = 5f;
     public GameObject impactEffect;
 
     public int damage = 4;
@@ -20,6 +20,7 @@ public class Bullet : MonoBehaviour {
 	void Update () {
 		if (target == null)
         {
+            
             Destroy(gameObject);
             return;
         }

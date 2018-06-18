@@ -14,6 +14,7 @@ public class Enemy : MonoBehaviour
     private float distance;
     private float travelledDistance=0;
     private Vector3 previousPosition;
+    public GameObject gameMaster;
 
 
 
@@ -25,6 +26,7 @@ public class Enemy : MonoBehaviour
         previousPosition = transform.position;
         distance = Vector3.Distance(transform.position, target.position);
         health = startinghealth;
+        gameMaster = GameObject.Find("GameMaster");
     }
 
     void Update()
@@ -52,10 +54,14 @@ public class Enemy : MonoBehaviour
             Destroy(gameObject);
             Damage();
         }
+        if (wavepointIndex < Waypoints.points.Length - 1)
+        {
+            wavepointIndex++;
+        }
 
 
-        wavepointIndex++;
         target = Waypoints.points[wavepointIndex];
+        
 
         //target = target.GetComponent<waypoint>().getwaypoint();
     }
@@ -66,7 +72,7 @@ public class Enemy : MonoBehaviour
         healthbar.fillAmount = health / startinghealth;
     
         if ( health <= 0) {
-            GameMaster.instance.goldupdate(15);
+            gameMaster.GetComponent<GameMaster>().goldupdate(15);
             Destroy(gameObject);
         }
     }

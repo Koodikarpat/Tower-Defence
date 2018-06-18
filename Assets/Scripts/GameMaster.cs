@@ -4,7 +4,7 @@ using UnityEngine.UI;
 
 public class GameMaster : MonoBehaviour {
 
-    public int goldamount = 0;
+    public static int goldamount = 0;
     public Text money;
 
     public Transform enemyPreFab;
@@ -17,23 +17,29 @@ public class GameMaster : MonoBehaviour {
     public static GameMaster instance = null;              //Static instance of GameManager which allows it to be accessed by any other script.
 
     //Awake is always called before any Start functions
-    void Awake()
+    //void Awake()
+    //{
+
+    //    goldupdate(65);
+    //    //Check if instance already exists
+    //    if (instance == null)
+
+    //        //if not, set instance to this
+    //        instance = this;
+
+    //    //If instance already exists and it's not this:
+    //    else if (instance != this)
+
+    //        //Then destroy this. This enforces our singleton pattern, meaning there can only ever be one instance of a GameManager.
+    //        Destroy(gameObject);
+
+    //    //Sets this to not be destroyed when reloading scene
+    //    DontDestroyOnLoad(gameObject);
+    //}
+
+    private void Start()
     {
         goldupdate(65);
-        //Check if instance already exists
-        if (instance == null)
-
-            //if not, set instance to this
-            instance = this;
-
-        //If instance already exists and it's not this:
-        else if (instance != this)
-
-            //Then destroy this. This enforces our singleton pattern, meaning there can only ever be one instance of a GameManager.
-            Destroy(gameObject);
-
-        //Sets this to not be destroyed when reloading scene
-        DontDestroyOnLoad(gameObject);
     }
 
 
@@ -58,6 +64,7 @@ public class GameMaster : MonoBehaviour {
             yield return new WaitForSeconds(0.4f);
         }
         waveIndex++;
+        GameManagerScript.Rounds++;
     }
 
     void SpawnEnemy()
@@ -69,7 +76,5 @@ public class GameMaster : MonoBehaviour {
     {
     goldamount += amount;
         money.text = "Currency : " + goldamount;
-        
-
     }
 }
