@@ -17,6 +17,7 @@ public class Nodes : MonoBehaviour {
     private SpriteRenderer rend;
 
     BuildManager buildManager;
+    public GameObject gameMaster;
 
 
     void Start()
@@ -25,6 +26,8 @@ public class Nodes : MonoBehaviour {
         startColor = rend.material.color;
 
         buildManager = BuildManager.instance;
+        gameMaster = GameObject.Find("GameMaster");
+	}
 
         text = GameObject.Find("Canvas").transform.GetChild(4).gameObject;
     }

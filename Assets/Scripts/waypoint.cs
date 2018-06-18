@@ -15,7 +15,11 @@ public class waypoint : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        nextwaypoint = neighbors[0];
+        if (neighbors.Length > 0)
+        {
+            nextwaypoint = neighbors[0];
+        }
+            
 	}
 	
 	// Update is called once per frame
