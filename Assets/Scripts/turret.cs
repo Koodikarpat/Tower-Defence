@@ -5,6 +5,8 @@ using UnityEngine;
 public class turret : MonoBehaviour {
 
     public Transform target;
+    public Sprite[] sprites;
+    private SpriteRenderer renderer;
 
     [Header("Unity setup Fields")]
 
@@ -23,7 +25,7 @@ public class turret : MonoBehaviour {
     // Use this for initialization
     void Start() {
         InvokeRepeating("UpdateTarget", 0f, 0.5f);
-
+        renderer = transform.GetChild(0).GetComponent<SpriteRenderer>();
     }
 
     void UpdateTarget()
@@ -55,10 +57,19 @@ public class turret : MonoBehaviour {
         if (target == null)
             return;
 
-        Vector3 dir = target.position - transform.position;
-        Quaternion lookRotation = Quaternion.LookRotation(dir, Vector3.forward);
-        Vector3 rotation = Quaternion.Lerp(partToRotate.rotation, lookRotation, Time.deltaTime * turnSpeed).eulerAngles;
-        partToRotate.rotation = Quaternion.Euler(0f, 0, rotation.z);
+        if (target.position.x > transform.position.x)
+        {
+            renderer.sprite = sprites[2];
+        }
+        else
+        {
+            renderer.sprite = sprites[1];
+        }
+
+        //Vector3 dir = target.position - transform.position;
+        //Quaternion lookRotation = Quaternion.LookRotation(dir, Vector3.forward);
+        //Vector3 rotation = Quaternion.Lerp(partToRotate.rotation, lookRotation, Time.deltaTime * turnSpeed).eulerAngles;
+        //partToRotate.rotation = Quaternion.Euler(0f, 0, rotation.z);
 
         //partToRotate.LookAt(target, Vector3.forward);
 
@@ -78,6 +89,7 @@ public class turret : MonoBehaviour {
     void shoot()
     {
         GameObject bulletGO = (GameObject)Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
+        bulletGO.transform.rotation= Quaternion.Euler(0, 0, 0);
         Bullet bullet = bulletGO.GetComponent<Bullet>();
 
         if (bullet != null)

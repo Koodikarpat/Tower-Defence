@@ -13,6 +13,7 @@ public class Nodes : MonoBehaviour {
     private SpriteRenderer rend;
 
     BuildManager buildManager;
+    public GameObject gameMaster;
 
 
 	void Start ()
@@ -21,11 +22,12 @@ public class Nodes : MonoBehaviour {
         startColor = rend.material.color;
 
         buildManager = BuildManager.instance;
+        gameMaster = GameObject.Find("GameMaster");
 	}
 
     void OnMouseDown()
     {
-        if (GameMaster.instance.goldamount >= 15)
+        if (GameMaster.goldamount >= 15)
         {
             if (buildManager.getTurretToBuild() == null)
             return;
@@ -38,7 +40,7 @@ public class Nodes : MonoBehaviour {
 
             GameObject turretToBuild = buildManager.getTurretToBuild();
             turret = (GameObject)Instantiate(turretToBuild, new Vector3(transform.position.x, transform.position.y, -1), transform.rotation);
-            GameMaster.instance.goldupdate(-15);
+            gameMaster.GetComponent<GameMaster>().goldupdate(-15);
         }
 
     }

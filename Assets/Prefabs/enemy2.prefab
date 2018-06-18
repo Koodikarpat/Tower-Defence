@@ -52,7 +52,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f9769953c6eb1f44198007d5748379e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 15
+  speed: 50
+  damage: 20
+  targetTower: {fileID: 0}
 --- !u!212 &212323650020489968
 SpriteRenderer:
   m_ObjectHideFlags: 1
