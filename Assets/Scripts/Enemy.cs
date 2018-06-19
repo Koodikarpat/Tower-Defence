@@ -1,11 +1,20 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 
-public class Enemy : MonoBehaviour {
-
+public class Enemy : MonoBehaviour
+{
     public float speed;
+    public int damage = 20;
     private Transform target;
+    public GameObject targetTower;
     private int wavepointIndex = 0;
-    private int health = 10;
+    private int startinghealth = 20;
+    public Image healthbar;
+    private float health;
+    private float distance;
+    private float travelledDistance=0;
+    private Vector3 previousPosition;
+    public GameObject gameMaster;
 
 
 
@@ -13,16 +22,28 @@ public class Enemy : MonoBehaviour {
     void Start()
     {
         target = Waypoints.points[0];
+        targetTower = GameObject.Find("Tower");
+        previousPosition = transform.position;
+        distance = Vector3.Distance(transform.position, target.position);
+        health = startinghealth;
+        gameMaster = GameObject.Find("GameMaster");
     }
 
     void Update()
     {
-        Vector3 dir = target.position - transform.position;
-        transform.Translate(dir.normalized*speed*Time.deltaTime, Space.World);
+        Vector3 dir = (target.position - transform.position).normalized;
+        transform.Translate(dir * speed * Time.deltaTime, Space.World);
 
-        if (Vector3.Distance(transform.position, target.position) <= 0.2f)
+        if (travelledDistance >= distance)
         {
             GetNextWaypoint();
+            distance = Vector3.Distance(transform.position, target.position);
+            travelledDistance = 0;
+        }
+        else
+        {
+            travelledDistance += Vector3.Distance(previousPosition, transform.position);
+            previousPosition = transform.position;
         }
     }
 
@@ -31,14 +52,35 @@ public class Enemy : MonoBehaviour {
         if (wavepointIndex >= Waypoints.points.Length - 1)
         {
             Destroy(gameObject);
+            Damage();
+        }
+        if (wavepointIndex < Waypoints.points.Length - 1)
+        {
+            wavepointIndex++;
         }
 
-        target = target.GetComponent<waypoint>().getwaypoint();
+
+        target = Waypoints.points[wavepointIndex];
+        
+
+        //target = target.GetComponent<waypoint>().getwaypoint();
     }
-    public void takeDamage( int damage)
+    public void takeDamage(int damage)
     {
         health -= damage;
-        if ( health <= 0) { Destroy(gameObject); }
+
+        healthbar.fillAmount = health / startinghealth;
+    
+        if ( health <= 0) {
+            gameMaster.GetComponent<GameMaster>().goldupdate(30);
+            Destroy(gameObject);
+        }
+    }
+
+    void Damage ()
+    {
+        targetTower.GetComponent<Tower>().TakeDamage(damage);
     }
 
 }
+
