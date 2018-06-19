@@ -49,7 +49,7 @@ public class GameMaster : MonoBehaviour {
 
     private void Start()
     {
-        goldupdate(65);
+        goldupdate(300);
     }
 
 
@@ -121,7 +121,7 @@ public class GameMaster : MonoBehaviour {
 
     public void goldupdate(int amount)
     {
-    goldamount += amount;
+        goldamount += amount;
         money.text = "$" + goldamount;
         
 
