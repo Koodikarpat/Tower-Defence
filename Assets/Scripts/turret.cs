@@ -6,11 +6,15 @@ public class turret : MonoBehaviour {
 
     public Transform target;
     public Sprite[] sprites;
-    private SpriteRenderer renderer;
+    private SpriteRenderer spriterender;
 
     [Header("Unity setup Fields")]
 
     public float range = 15f;
+
+    public bool uselaser = false;
+    public LineRenderer linerendering;
+
     public float fireRate = 1f;
     private float fireCountdown = 0f;
 
@@ -23,11 +27,10 @@ public class turret : MonoBehaviour {
 
     public GameObject bulletPrefab;
     public Transform firePoint;
-
-    // Use this for initialization
+    
     void Start() {
         InvokeRepeating("UpdateTarget", 0f, 0.5f);
-        renderer = transform.GetChild(0).GetComponent<SpriteRenderer>();
+        spriterender = transform.GetChild(0).GetComponent<SpriteRenderer>();
     }
 
     void UpdateTarget()
@@ -54,41 +57,69 @@ public class turret : MonoBehaviour {
         }
     }
 
-    // Update is called once per frame
     void Update() {
         if (target == null)
+        {
+            if (uselaser)
+            {
+                if (linerendering.enabled)
+                    linerendering.enabled = false;
+            }
+
+        
             return;
+        }
 
         if (target.position.x > transform.position.x)
         {
-            renderer.sprite = sprites[2];
+            spriterender.sprite = sprites[2];
         }
         else
         {
-            renderer.sprite = sprites[1];
+            spriterender.sprite = sprites[1];
         }
 
-        //Vector3 dir = target.position - transform.position;
-        //Quaternion lookRotation = Quaternion.LookRotation(dir, Vector3.forward);
-        //Vector3 rotation = Quaternion.Lerp(partToRotate.rotation, lookRotation, Time.deltaTime * turnSpeed).eulerAngles;
-        //partToRotate.rotation = Quaternion.Euler(0f, 0, rotation.z);
 
-        //partToRotate.LookAt(target, Vector3.forward);
-
-        //RaycastHit hitTarget;
-        //Vector3 aimvector = new Vector3(transform.position.x, target.position.y, transform.position.z);
-        //bool hit = Physics.Raycast(aimvector, partToRotate.transform.forward, out hitTarget);
-        if (fireCountdown <= 0f)
-        { 
-            shoot();
-            fireCountdown = 1f / fireRate;
+        lockontarget();
+    
+        if (uselaser)
+        {
+            laser();
         }
+        else
+        {
+            if (fireCountdown <= 0f)
+            {
+                shoot();
+                fireCountdown = 1f / fireRate;
+            }
 
-        fireCountdown -= Time.deltaTime;
+            fireCountdown -= Time.deltaTime;
+        }
+     
+    }
+     void lockontarget()
 
+    {
+        Vector3 dir = target.position - transform.position;
+        Quaternion lookRotation = Quaternion.LookRotation(dir, Vector3.forward);
+        Vector3 rotation = Quaternion.Lerp(partToRotate.rotation, lookRotation, Time.deltaTime * turnSpeed).eulerAngles;
+        partToRotate.rotation = Quaternion.Euler(0f, 0, rotation.z);
     }
 
+    void laser()
+
+    {
+        if (!linerendering.enabled)
+                linerendering.enabled = true;
+ 
+        linerendering.SetPosition(1, firePoint.position);
+        linerendering.SetPosition(0, target.position);
+    }
+  
     void shoot()
+
+
     {
         GameObject bulletGO = (GameObject)Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
         bulletGO.transform.rotation= Quaternion.Euler(0, 0, 0);
@@ -103,4 +134,6 @@ public class turret : MonoBehaviour {
 
          Gizmos.DrawWireSphere(transform.position, range);
     }
+
+
 }
