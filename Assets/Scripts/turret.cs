@@ -13,7 +13,8 @@ public class turret : MonoBehaviour {
     public float range = 15f;
 
     public bool uselaser = false;
-    public LineRenderer linerendering;
+    public LineRenderer lineRenderer;
+    public ParticleSystem impacteffect;
 
     public float fireRate = 1f;
     private float fireCountdown = 0f;
@@ -62,22 +63,29 @@ public class turret : MonoBehaviour {
         {
             if (uselaser)
             {
-                if (linerendering.enabled)
-                    linerendering.enabled = false;
+                if (lineRenderer.enabled)
+                {
+                    lineRenderer.enabled = false;
+                    impacteffect.Stop();
+
+
+                }
+                    
             }
 
         
             return;
         }
 
-        if (target.position.x > transform.position.x)
-        {
-            spriterender.sprite = sprites[2];
-        }
-        else
-        {
-            spriterender.sprite = sprites[1];
-        }
+
+       //if (target.position.x > transform.position.x)
+       // {
+       //     spriterender.sprite = sprites[2];
+       // }
+       // else
+       // {
+       //     spriterender.sprite = sprites[1];
+       // }
 
 
         lockontarget();
@@ -102,19 +110,29 @@ public class turret : MonoBehaviour {
 
     {
         Vector3 dir = target.position - transform.position;
-        Quaternion lookRotation = Quaternion.LookRotation(dir, Vector3.forward);
+        Quaternion lookRotation = Quaternion.LookRotation(dir);
         Vector3 rotation = Quaternion.Lerp(partToRotate.rotation, lookRotation, Time.deltaTime * turnSpeed).eulerAngles;
-        partToRotate.rotation = Quaternion.Euler(0f, 0, rotation.z);
+       partToRotate.rotation = Quaternion.Euler(0f, 0, rotation.z);
     }
-
+  
     void laser()
 
     {
-        if (!linerendering.enabled)
-                linerendering.enabled = true;
+        if (!lineRenderer.enabled)
+        {
+           lineRenderer.enabled = true;
+            impacteffect.Play();
+
+
+
+        }
+                
  
-        linerendering.SetPosition(1, firePoint.position);
-        linerendering.SetPosition(0, target.position);
+        lineRenderer.SetPosition(1, firePoint.position);
+        lineRenderer.SetPosition(0, target.position);
+
+        impacteffect.transform.position = target.position;
+
     }
   
     void shoot()
