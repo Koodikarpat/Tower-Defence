@@ -3,7 +3,13 @@ using UnityEngine.UI;
 
 public class Enemy : MonoBehaviour
 {
+    
     public float speed;
+
+    public float startSpeed=10;
+    private float slowTime;
+    public float startSlowTime=4f;
+    private bool loseHealth = false;
     public int damage = 20;
     private Transform target;
     public GameObject targetTower;
@@ -15,6 +21,7 @@ public class Enemy : MonoBehaviour
     private float travelledDistance=0;
     private Vector3 previousPosition;
     public GameObject gameMaster;
+    
 
 
 
@@ -27,6 +34,8 @@ public class Enemy : MonoBehaviour
         distance = Vector3.Distance(transform.position, target.position);
         health = startinghealth;
         gameMaster = GameObject.Find("GameMaster");
+        speed = startSpeed;
+        slowTime = startSlowTime;
     }
 
     void Update()
@@ -45,6 +54,17 @@ public class Enemy : MonoBehaviour
             travelledDistance += Vector3.Distance(previousPosition, transform.position);
             previousPosition = transform.position;
         }
+
+        if (slowTime <= 0f)
+        {
+            speed = startSpeed;
+            slowTime =startSlowTime;
+        }
+        if (loseHealth==true)
+        {
+            slowTime -= Time.deltaTime;
+        }
+
     }
 
     void GetNextWaypoint()
@@ -68,13 +88,19 @@ public class Enemy : MonoBehaviour
     public void takeDamage(int damage)
     {
         health -= damage;
-
+        loseHealth = true;
+        slowTime = startSlowTime;
         healthbar.fillAmount = health / startinghealth;
     
         if ( health <= 0) {
             gameMaster.GetComponent<GameMaster>().goldupdate(15);
             Destroy(gameObject);
         }
+    }
+
+    public void Slow(float pct)
+    {
+        speed = startSpeed * (1f - pct);
     }
 
     void Damage ()
