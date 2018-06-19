@@ -216,7 +216,7 @@ MonoBehaviour:
   speed: 15
   damage: 20
   targetTower: {fileID: 0}
-  healthbar: {fileID: 114127793593870192}
+  healthbar: {fileID: 114963037147217636}
   gameMaster: {fileID: 0}
 --- !u!114 &114963037147217636
 MonoBehaviour:

@@ -5,18 +5,18 @@ using System.Collections.Generic;
 
 public class DemoPanelAnim : MonoBehaviour {
 
-	[Header("PANEL SETTINGS")]
-	public List<GameObject> panels = new List<GameObject>();
-	public int currentPanelIndex = 0;
-	public GameObject currentPanel;
-	private CanvasGroup canvasGroup;
+    [Header("PANEL SETTINGS")]
+    public List<GameObject> panels = new List<GameObject>();
+    public int currentPanelIndex = 0;
+    public GameObject currentPanel;
+    private CanvasGroup canvasGroup;
     public Text topTitleText;
 
-	[Header("ANIMATION SETTINGS")]
+    [Header("ANIMATION SETTINGS")]
     private bool fadeOut = false;
     private bool fadeIn = false;
-    [Range(0, 10)public float fadeFactor = 8f;
-    [Range(0, 10)public float growRate = 0.5f;
+    [Range(0, 10)] public float fadeFactor = 8f;
+    [Range(0, 10)] public float growRate = 0.5f;
 
     void Update ()
 	{
