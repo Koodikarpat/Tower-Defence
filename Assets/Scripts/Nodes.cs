@@ -27,7 +27,6 @@ public class Nodes : MonoBehaviour {
 
         buildManager = BuildManager.instance;
         gameMaster = GameObject.Find("GameMaster");
-	}
 
         text = GameObject.Find("Canvas").transform.GetChild(4).gameObject;
     }
@@ -35,7 +34,7 @@ public class Nodes : MonoBehaviour {
     void OnMouseDown()
     {
         GameObject turretToBuild = buildManager.getTurretToBuild();
-        if (GameMaster.instance.goldamount >= turretToBuild.GetComponent<turret>().cost)
+        if (GameMaster.goldamount >= turretToBuild.GetComponent<turret>().cost)
         {
             if (buildManager.getTurretToBuild() == null)
                 return;
