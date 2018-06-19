@@ -29,7 +29,7 @@ public class Nodes : MonoBehaviour {
         gameMaster = GameObject.Find("GameMaster");
 
        // Debug.Log(GameObject.Find("Canvas").transform.childCount);
-        text = GameObject.Find("GameUICanvas").transform.Find("NoMoney").gameObject;
+        text = GameObject.Find("GameUICanvas").transform.Find("NoMoneyBG").gameObject;
     }
 
     void OnMouseDown()

@@ -8,7 +8,7 @@ public class Enemy : MonoBehaviour
     private Transform target;
     public GameObject targetTower;
     private int wavepointIndex = 0;
-    private int startinghealth = 20;
+    private int startinghealth = 60;
     public Image healthbar;
     private float health;
     private float distance;
@@ -72,7 +72,7 @@ public class Enemy : MonoBehaviour
         healthbar.fillAmount = health / startinghealth;
     
         if ( health <= 0) {
-            gameMaster.GetComponent<GameMaster>().goldupdate(30);
+            gameMaster.GetComponent<GameMaster>().goldupdate(75);
             Destroy(gameObject);
         }
     }
