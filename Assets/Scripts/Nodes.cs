@@ -34,7 +34,7 @@ public class Nodes : MonoBehaviour {
     void OnMouseDown()
     {
         GameObject turretToBuild = buildManager.getTurretToBuild();
-        if (GameMaster.goldamount >= turretToBuild.GetComponent<turret>().cost)
+        if (turretToBuild != null && GameMaster.goldamount >= turretToBuild.GetComponent<turret>().cost)
         {
             if (buildManager.getTurretToBuild() == null)
                 return;
@@ -47,7 +47,7 @@ public class Nodes : MonoBehaviour {
 
             // GameObject turretToBuild = buildManager.getTurretToBuild();
             turret = (GameObject)Instantiate(turretToBuild, new Vector3(transform.position.x, transform.position.y, -1), transform.rotation);
-            GameMaster.instance.goldupdate(-turret.GetComponent<turret>().cost);
+            gameMaster.GetComponent<GameMaster>().goldupdate(-turret.GetComponent<turret>().cost);
 
             if (text.activeSelf)
             {
@@ -55,8 +55,7 @@ public class Nodes : MonoBehaviour {
 
             }
         }
-        else
-            text.SetActive(true);
+        else if (turretToBuild != null) text.SetActive(true);
         //timerEnded();
     }
 
