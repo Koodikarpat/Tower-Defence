@@ -21,6 +21,10 @@ public class turret : MonoBehaviour {
 
     public int cost;
 
+    public bool isUpgraded=false;
+
+    public int damageT=10;
+
     public GameObject bulletPrefab;
     public Transform firePoint;
 
@@ -100,6 +104,7 @@ public class turret : MonoBehaviour {
         GameObject bulletGO = (GameObject)Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
         bulletGO.transform.rotation= Quaternion.Euler(0, 0, 0);
         Bullet bullet = bulletGO.GetComponent<Bullet>();
+        bullet.damage = damageT;
 
         if (bullet != null)
             bullet.Seek(target);
@@ -110,4 +115,13 @@ public class turret : MonoBehaviour {
 
          Gizmos.DrawWireSphere(transform.position, range);
     }
+
+    public void UpgradeTurret()
+    {
+        range += 10f;
+        damageT += 10;
+        isUpgraded = true;
+        
+    }
+
 }
