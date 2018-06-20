@@ -14,7 +14,7 @@ public class GameMaster : MonoBehaviour {
 
     public Wave[] waves;
 
-    public static int Rounds = 0;
+    public static int enemytype = 1;
 
     public static int Lives = 3;
  
@@ -23,6 +23,7 @@ public class GameMaster : MonoBehaviour {
     private float countdown = 2.5f;
     public int waveIndex = 0;
     public Text waveCountdownText;
+
 
     public static GameMaster instance = null;              //Static instance of GameManager which allows it to be accessed by any other script.
 
@@ -56,7 +57,7 @@ public class GameMaster : MonoBehaviour {
     void Update()
     {
 
-        Livescounter.text = "Lives: " + Lives;
+        //Livescounter.text = "Lives: " + Lives;
 
         if (EnemiesAlive > 0)
         {
@@ -99,18 +100,38 @@ public class GameMaster : MonoBehaviour {
 
     IEnumerator SpawnWave()
     {
-            Rounds++;
-            Wave wave = waves[waveIndex];
 
-            EnemiesAlive = wave.count;
-            for (int i = 0; i < wave.count; i++)
+        
+
+            Wave wave = waves[waveIndex];
+        foreach(int amount in wave.count) {
+
+            EnemiesAlive += amount;
+
+        }
+
+
+
+        int totalenemies = EnemiesAlive;
+        while (totalenemies > 0)
+        {
+                enemytype = Random.Range(0, wave.enemy.Length);
+            
+            if (wave.count[enemytype] > 0)
             {
-                SpawnEnemy(wave.enemy);
+                SpawnEnemy(wave.enemy[enemytype]);
+
+                wave.count[enemytype]--;
+
+                
+                totalenemies--;
                 yield return new WaitForSeconds(1f / wave.rate);
             }
 
-            waveIndex++;
+            
+        }
 
+            waveIndex++;
 
     }
 

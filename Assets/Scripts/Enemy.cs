@@ -8,7 +8,7 @@ public class Enemy : MonoBehaviour
     private Transform target;
     public GameObject targetTower;
     private int wavepointIndex = 0;
-    private int startinghealth = 100;
+    public int startinghealth = 100;
     public Image healthbar;
     private float health;
     private float distance;
@@ -64,7 +64,7 @@ public class Enemy : MonoBehaviour
         }
         if (wavepointIndex < Waypoints.points.Length - 1)
         {
-            wavepointIndex++;
+            //wavepointIndex++;
         }
 
         //target = target.GetComponent<waypoint>().getwaypoint();
