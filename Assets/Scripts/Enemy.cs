@@ -3,18 +3,25 @@ using UnityEngine.UI;
 
 public class Enemy : MonoBehaviour
 {
+    
     public float speed;
+
+    public float startSpeed=10;
+    private float slowTime;
+    public float startSlowTime=4f;
+    private bool loseHealth = false;
     public int damage = 20;
     private Transform target;
     public GameObject targetTower;
     private int wavepointIndex = 0;
-    private int startinghealth = 60;
+    public int startinghealth = 100;
     public Image healthbar;
     private float health;
     private float distance;
     private float travelledDistance=0;
     private Vector3 previousPosition;
     public GameObject gameMaster;
+    
 
 
 
@@ -27,6 +34,8 @@ public class Enemy : MonoBehaviour
         distance = Vector3.Distance(transform.position, target.position);
         health = startinghealth;
         gameMaster = GameObject.Find("GameMaster");
+        speed = startSpeed;
+        slowTime = startSlowTime;
     }
 
     void Update()
@@ -45,36 +54,59 @@ public class Enemy : MonoBehaviour
             travelledDistance += Vector3.Distance(previousPosition, transform.position);
             previousPosition = transform.position;
         }
+
+        if (slowTime <= 0f)
+        {
+            speed = startSpeed;
+            slowTime =startSlowTime;
+        }
+        if (loseHealth==true)
+        {
+            slowTime -= Time.deltaTime;
+        }
+
     }
 
     void GetNextWaypoint()
     {
-        if (wavepointIndex >= Waypoints.points.Length - 1)
+        if (wavepointIndex <= Waypoints.points.Length - 2)
         {
+
+            wavepointIndex++;
+            target = Waypoints.points[wavepointIndex];
+
+        }
+        else {
+            GameMaster.Lives--;
             Destroy(gameObject);
             Damage();
+            GameMaster.EnemiesAlive--;
         }
         if (wavepointIndex < Waypoints.points.Length - 1)
         {
-            wavepointIndex++;
+            //wavepointIndex++;
         }
-
-
-        target = Waypoints.points[wavepointIndex];
-        
 
         //target = target.GetComponent<waypoint>().getwaypoint();
     }
     public void takeDamage(int damage)
     {
         health -= damage;
-
+        loseHealth = true;
+        slowTime = startSlowTime;
         healthbar.fillAmount = health / startinghealth;
     
         if ( health <= 0) {
             gameMaster.GetComponent<GameMaster>().goldupdate(75);
             Destroy(gameObject);
+            GameMaster.EnemiesAlive--;
         }
+
+    }
+
+    public void Slow(float pct)
+    {
+        speed = startSpeed * (1f - pct);
     }
 
     void Damage ()

@@ -2,9 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class turret : MonoBehaviour {
+public class SlowingTurret : MonoBehaviour {
 
-    public GameObject Circle;
     public Transform target;
     public Sprite[] sprites;
     private SpriteRenderer renderer;
@@ -20,17 +19,14 @@ public class turret : MonoBehaviour {
     public Transform partToRotate;
     public float turnSpeed = 10f;
 
-    public int cost;
-
-    public bool isUpgraded=false;
-
-    public int damageT=10;
-
     public GameObject bulletPrefab;
     public Transform firePoint;
 
+    float zRotation = 90f;
+
     // Use this for initialization
-    void Start() {
+    void Start()
+    {
         InvokeRepeating("UpdateTarget", 0f, 0.5f);
         renderer = transform.GetChild(0).GetComponent<SpriteRenderer>();
     }
@@ -42,7 +38,7 @@ public class turret : MonoBehaviour {
         GameObject nearestEnemy = null;
         foreach (GameObject enemy in enemies)
         {
-            float distanceToEnemy = Vector3.Distance (transform.position, enemy.transform.position);
+            float distanceToEnemy = Vector3.Distance(transform.position, enemy.transform.position);
             if (distanceToEnemy < shortestDistance)
             {
                 shortestDistance = distanceToEnemy;
@@ -53,7 +49,8 @@ public class turret : MonoBehaviour {
         if (nearestEnemy != null && shortestDistance <= range)
         {
             target = nearestEnemy.transform;
-        } else
+        }
+        else
         {
             target = null;
         }
@@ -61,26 +58,24 @@ public class turret : MonoBehaviour {
 
     // Update is called once per frame
     void Update()
-
-        {
-        float Scale = range / transform.localScale.x * 2f;
-        Circle.transform.localScale = new Vector3(Scale, Scale, Scale);
+    {
         if (target == null)
             return;
 
-        if (target.position.x - transform.position.x >=5)
-        {
-            renderer.sprite = sprites[2];
-        }
-        if (target.position.x - transform.position.x <=-5)
-        {
-            renderer.sprite = sprites[1];
-        }
-        if(target.position.x - transform.position.x>-5 && target.position.x - transform.position.x <5)
-        {
-            renderer.sprite = sprites[0];
-        }
-
+        
+            if (target.position.x - transform.position.x >= 5)
+            {
+                renderer.sprite = sprites[2];
+            }
+            if (target.position.x - transform.position.x <= -5)
+            {
+                renderer.sprite = sprites[1];
+            }
+            if (target.position.x - transform.position.x > -5 && target.position.x - transform.position.x < 5)
+            {
+                renderer.sprite = sprites[0];
+            }
+        
 
 
 
@@ -90,12 +85,12 @@ public class turret : MonoBehaviour {
         //partToRotate.rotation = Quaternion.Euler(0f, 0, rotation.z);
 
         //partToRotate.LookAt(target, Vector3.forward);
-
+        
         //RaycastHit hitTarget;
         //Vector3 aimvector = new Vector3(transform.position.x, target.position.y, transform.position.z);
         //bool hit = Physics.Raycast(aimvector, partToRotate.transform.forward, out hitTarget);
         if (fireCountdown <= 0f)
-        { 
+        {
             shoot();
             fireCountdown = 1f / fireRate;
         }
@@ -107,9 +102,8 @@ public class turret : MonoBehaviour {
     void shoot()
     {
         GameObject bulletGO = (GameObject)Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
-        bulletGO.transform.rotation= Quaternion.Euler(0, 0, 0);
-        Bullet bullet = bulletGO.GetComponent<Bullet>();
-        bullet.damage = damageT;
+        bulletGO.transform.rotation = Quaternion.Euler(0, 0, 0);
+        BulletSlows bullet = bulletGO.GetComponent<BulletSlows>();
 
         if (bullet != null)
             bullet.Seek(target);
@@ -118,15 +112,7 @@ public class turret : MonoBehaviour {
     void OnDrawGizmosSelected()
     {
 
-         Gizmos.DrawWireSphere(transform.position, range);
-    }
-
-    public void UpgradeTurret()
-    {
-        range += 10f;
-        damageT += 10;
-        isUpgraded = true;
-        
+        Gizmos.DrawWireSphere(transform.position, range);
     }
 
 }
