@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class turret : MonoBehaviour {
 
+    public GameObject Circle;
     public Transform target;
     public Sprite[] sprites;
     private SpriteRenderer renderer;
@@ -55,7 +56,11 @@ public class turret : MonoBehaviour {
     }
 
     // Update is called once per frame
-    void Update() {
+    void Update()
+
+        {
+        float Scale = range / transform.localScale.x * 2f;
+        Circle.transform.localScale = new Vector3(Scale, Scale, Scale);
         if (target == null)
             return;
 
