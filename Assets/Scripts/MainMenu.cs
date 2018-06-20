@@ -1,21 +1,22 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class MainMenu : MonoBehaviour 
+public class MainMenu : MonoBehaviour
 {
 
-	// Use this for initialization
-	public void PlayGame ()
+    public string levelToLoad = "MainLevel";
+
+    public SceneFader sceneFader;
+
+    public void Play()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-	}
-	
-	// Update is called once per frame
-	public void QuitGame ()
+        sceneFader.FadeTo(levelToLoad);
+    }
+
+    public void Quit()
     {
-        Debug.Log("Quit!");
+        Debug.Log("Exciting...");
         Application.Quit();
-	}
+    }
+
 }

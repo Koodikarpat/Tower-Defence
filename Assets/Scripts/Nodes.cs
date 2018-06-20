@@ -28,7 +28,8 @@ public class Nodes : MonoBehaviour {
         buildManager = BuildManager.instance;
         gameMaster = GameObject.Find("GameMaster");
 
-        //text = GameObject.Find("Canvas").transform.GetChild(4).gameObject;
+       // Debug.Log(GameObject.Find("Canvas").transform.childCount);
+        text = GameObject.Find("GameUICanvas").transform.Find("NoMoneyBG").gameObject;
     }
 
     void OnMouseDown()

@@ -76,7 +76,7 @@ public class Enemy : MonoBehaviour
         healthbar.fillAmount = health / startinghealth;
     
         if ( health <= 0) {
-            gameMaster.GetComponent<GameMaster>().goldupdate(15);
+            gameMaster.GetComponent<GameMaster>().goldupdate(75);
             Destroy(gameObject);
             GameMaster.EnemiesAlive--;
         }

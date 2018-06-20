@@ -50,7 +50,8 @@ public class GameMaster : MonoBehaviour {
 
     private void Start()
     {
-        goldupdate(300);
+        goldamount = 600;
+        goldupdate(0);
     }
 
 
