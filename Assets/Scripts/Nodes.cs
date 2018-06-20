@@ -50,13 +50,13 @@ public class Nodes : MonoBehaviour {
             turret = (GameObject)Instantiate(turretToBuild, new Vector3(transform.position.x, transform.position.y, -1), transform.rotation);
             gameMaster.GetComponent<GameMaster>().goldupdate(-turret.GetComponent<turret>().cost);
 
-            if (text.activeSelf)
+            /*if (text.activeSelf)
             {
                 text.SetActive(false);
 
-            }
+            }*/
         }
-        else if (turretToBuild != null) text.SetActive(true);
+        //else if (turretToBuild != null) text.SetActive(true);
         //timerEnded();
     }
 
@@ -81,11 +81,11 @@ public class Nodes : MonoBehaviour {
             timerEnded();
         }
 
-        if (text.activeSelf)
+        /*if (text.activeSelf)
         {
             targetTime -= Time.deltaTime;
         }
-
+        */
     }
 
     void timerEnded()
