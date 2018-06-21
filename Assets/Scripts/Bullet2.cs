@@ -10,6 +10,8 @@ public class Bullet2 : MonoBehaviour
     public float speed = 70f;
     public float explosionRadius = 0f;
     public GameObject impactEffect;
+    public int Damage = 4;
+    public GameObject MissileAudio;
 
     public void Seek(Transform _target)
     {
@@ -42,6 +44,11 @@ public class Bullet2 : MonoBehaviour
     {
         GameObject effectIns = (GameObject)Instantiate(impactEffect, transform.position, transform.rotation);
         Destroy(effectIns, 2f);
+        target.gameObject.GetComponent<Enemy>().takeDamage(Damage);
+        Destroy(gameObject);
+
+        GameObject MissileAud = (GameObject)Instantiate(MissileAudio, transform.position, transform.rotation);
+        Destroy(MissileAud, 2f);
 
         if (explosionRadius > 0f)
         {
@@ -53,6 +60,12 @@ public class Bullet2 : MonoBehaviour
     void Explode()
     {
         Collider[] colliders = Physics.OverlapSphere(transform.position, explosionRadius);
+        foreach (Collider collider in colliders)
+        {
+            if (collider.tag == "Enemy")
+            {
+                collider.GetComponent<Enemy>().takeDamage(5);
+            }
         }
-
+    }
 }
