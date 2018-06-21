@@ -42,8 +42,8 @@ public class Bullet2 : MonoBehaviour
 
     void HitTarget()
     {
-        GameObject effectIns = (GameObject)Instantiate(impactEffect, transform.position, transform.rotation);
-        Destroy(effectIns, 2f);
+        GameObject effectIns = (GameObject)Instantiate(impactEffect, transform.position, Quaternion.identity);
+        Destroy(effectIns, 0.3f);
         target.gameObject.GetComponent<Enemy>().takeDamage(Damage);
         Destroy(gameObject);
 

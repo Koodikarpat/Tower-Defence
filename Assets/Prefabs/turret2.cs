@@ -55,16 +55,16 @@ public class turret2 : MonoBehaviour {
         if (target == null)
             return;
 
-        Vector3 dir = target.position - transform.position;
-        Quaternion lookRotation = Quaternion.LookRotation(dir);
-        Vector3 rotation = Quaternion.Lerp(partToRotate.rotation, lookRotation, Time.deltaTime * turnSpeed).eulerAngles;
-        partToRotate.rotation = Quaternion.Euler(0f, rotation.y, 0f);
+        //Vector3 dir = target.position - transform.position;
+        //Quaternion lookRotation = Quaternion.LookRotation(dir);
+        //Vector3 rotation = Quaternion.Lerp(partToRotate.rotation, lookRotation, Time.deltaTime * turnSpeed).eulerAngles;
+        //partToRotate.rotation = Quaternion.Euler(0f, rotation.y, 0f);
 
-        RaycastHit hitTarget;
-        Vector3 aimvector = new Vector3(transform.position.x, target.position.y, transform.position.z);
-        bool hit = Physics.Raycast(aimvector, partToRotate.transform.right, out hitTarget);
-        Debug.DrawRay(aimvector, Vector3.forward, Color.red);
-        if (fireCountdown <= 0f && hit == true)
+        //RaycastHit hitTarget;
+        //Vector3 aimvector = new Vector3(transform.position.x, target.position.y, transform.position.z);
+        //bool hit = Physics.Raycast(aimvector, partToRotate.transform.right, out hitTarget);
+        //Debug.DrawRay(aimvector, Vector3.forward, Color.red);
+        if (fireCountdown <= 0f)
         { 
             shoot();
             fireCountdown = 1f / fireRate;

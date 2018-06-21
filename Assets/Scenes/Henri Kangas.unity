@@ -24436,10 +24436,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   money: {fileID: 114459684643378946, guid: a94e97f9d8389754f9c9bd113f0aa3fd, type: 2}
-  enemyPreFab: {fileID: 4818976574363448, guid: a56f0ae21c2556948bc39a9449b4705f,
+  roundcount: {fileID: 114677399423993298, guid: 2273a5e584da19145b3c07e34bdae39f,
     type: 2}
+  Livescounter: {fileID: 0}
+  waves:
+  - enemy:
+    - {fileID: 1301395707108240, guid: b3386d3d5af118a43aac660782532870, type: 2}
+    count: 05000000
+    rate: 1
   spawnPoint: {fileID: 1629840270}
   timeBetweenWaves: 5
+  waveIndex: 0
   waveCountdownText: {fileID: 1225734628}
 --- !u!4 &724816670
 Transform:
@@ -24469,6 +24476,7 @@ MonoBehaviour:
     type: 2}
   anotherTurretPrefab: {fileID: 1078863792511460, guid: 14c5fb9ce7d04bf479319e84cb37466d,
     type: 2}
+  nodeUI: {fileID: 0}
 --- !u!114 &724816672
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -24481,6 +24489,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ui: {fileID: 1079220530}
+  myFx: {fileID: 0}
+  pressFx: {fileID: 0}
   menuSceneName: MainMenuScene
   sceneFader: {fileID: 0}
 --- !u!114 &724816673
