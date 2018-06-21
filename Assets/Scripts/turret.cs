@@ -21,6 +21,8 @@ public class turret : MonoBehaviour {
 
     public int cost;
 
+    public GameObject gameMaster;
+
     public bool isUpgraded=false;
 
     public int damageT=10;
@@ -28,11 +30,19 @@ public class turret : MonoBehaviour {
     public GameObject bulletPrefab;
     public Transform firePoint;
 
+    public int GetSellAmount()
+    {
+        return cost / 2;
+    }
+
     // Use this for initialization
     void Start() {
         InvokeRepeating("UpdateTarget", 0f, 0.5f);
         renderer = transform.GetChild(0).GetComponent<SpriteRenderer>();
+        gameMaster = GameObject.Find("GameMaster");
     }
+
+    
 
     void UpdateTarget()
     {
@@ -124,4 +134,10 @@ public class turret : MonoBehaviour {
         
     }
 
+    public void SellTurret()
+    {
+        Destroy(gameObject);
+        gameMaster.GetComponent<GameMaster>().goldupdate(GetSellAmount());
+    }
+    
 }
