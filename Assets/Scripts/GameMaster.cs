@@ -4,15 +4,26 @@ using UnityEngine.UI;
 
 public class GameMaster : MonoBehaviour {
 
+    public static int EnemiesAlive = 0;
+
+ 
     public static int goldamount = 0;
     public Text money;
+    public Text roundcount;
+    public Text Livescounter;
 
-    public Transform enemyPreFab;
+    public Wave[] waves;
+
+    public static int enemytype = 1;
+
+    public static int Lives = 3;
+ 
     public Transform spawnPoint;
     public float timeBetweenWaves = 5f;
     private float countdown = 2.5f;
-    private int waveIndex = 1;
+    public int waveIndex = 0;
     public Text waveCountdownText;
+
 
     public static GameMaster instance = null;              //Static instance of GameManager which allows it to be accessed by any other script.
 
@@ -39,37 +50,95 @@ public class GameMaster : MonoBehaviour {
 
     private void Start()
     {
-        goldupdate(300);
+        goldamount = 600;
+        goldupdate(0);
     }
 
 
     void Update()
     {
-        if (countdown <= 0f)
+
+        //Livescounter.text = "Lives: " + Lives;
+
+        if (EnemiesAlive > 0)
         {
-            StartCoroutine(SpawnWave());
-            countdown = timeBetweenWaves;
+
+            return;
+
         }
+        else
+        {
+            if (waveIndex == waves.Length)
+            {
+                
+                GameWon();
+                this.enabled = false;
+            }
+        }
+        if (countdown <= 0f)
+            {
+                StartCoroutine(SpawnWave());
+                countdown = timeBetweenWaves;
+                return;
+            }
+        
         countdown -=Time.deltaTime;
+
+        countdown = Mathf.Clamp(countdown, 0f, Mathf.Infinity);
+
         waveCountdownText.text = Mathf.Round(countdown).ToString();
 
-        
+
+
+
+
+        if (waveIndex < waves.Length)
+        {
+            roundcount.text = "Waves: " + (waveIndex + 1) + "/" + waves.Length;
+        }
+
     }
 
     IEnumerator SpawnWave()
     {
-        for(int i=0; i<waveIndex; i++)
-        {
-            SpawnEnemy();
-            yield return new WaitForSeconds(0.4f);
+
+        
+
+            Wave wave = waves[waveIndex];
+        foreach(int amount in wave.count) {
+
+            EnemiesAlive += amount;
+
         }
-        waveIndex++;
-        GameManagerScript.Rounds++;
+
+
+
+        int totalenemies = EnemiesAlive;
+        while (totalenemies > 0)
+        {
+                enemytype = Random.Range(0, wave.enemy.Length);
+            
+            if (wave.count[enemytype] > 0)
+            {
+                SpawnEnemy(wave.enemy[enemytype]);
+
+                wave.count[enemytype]--;
+
+                
+                totalenemies--;
+                yield return new WaitForSeconds(1f / wave.rate);
+            }
+
+            
+        }
+
+            waveIndex++;
+
     }
 
-    void SpawnEnemy()
+    void SpawnEnemy(GameObject enemy)
     {
-        Instantiate(enemyPreFab, spawnPoint.position, spawnPoint.rotation);
+        Instantiate(enemy, spawnPoint.position, spawnPoint.rotation);
     }
 
     public void goldupdate(int amount)
@@ -78,5 +147,15 @@ public class GameMaster : MonoBehaviour {
         money.text = "$" + goldamount;
         
 
+    }
+
+    void GameLost()
+    {
+        Debug.Log("LEVEL LOST");
+    }
+
+    void GameWon()
+    {
+        Debug.Log("LEVEL WON");
     }
 }
