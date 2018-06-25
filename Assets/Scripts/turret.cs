@@ -63,8 +63,7 @@ public class turret : MonoBehaviour {
     void Update()
 
         {
-        float Scale = range / transform.localScale.x * 2f;
-        Circle.transform.localScale = new Vector3(Scale, Scale, Scale);
+        
         if (target == null)
             return;
 
@@ -129,4 +128,23 @@ public class turret : MonoBehaviour {
         
     }
 
+    public void UpdateRange()
+
+    {
+        float Scale = range / transform.localScale.x * 2f;
+        Circle.transform.localScale = new Vector3(Scale, Scale, Scale);
+
+    }
+    
+    public void ToggleRange()
+    {
+        if(Circle.gameObject.activeSelf)
+        {
+            Circle.SetActive(false);
+        }
+        else
+        {
+            Circle.SetActive(true);
+        }
+    }
 }

@@ -23,6 +23,8 @@ public class NodeUI : MonoBehaviour {
             return;
         }
 
+       ToggleRange();
+
         target = _target;
 
         transform.position = target.GetBuildPosition();
@@ -35,13 +37,19 @@ public class NodeUI : MonoBehaviour {
         {
             upgradeCostText.text = "DONE";
         }
-        
 
+        target.GetComponent<Nodes>().turret.GetComponent<turret>().UpdateRange();
+        ToggleRange();
         ui.SetActive(true);
     }
-
+    void ToggleRange()
+    {
+       if(target != null) target.GetComponent<Nodes>().turret.GetComponent<turret>().ToggleRange();
+    }
     public void Hide()
     {
+        ToggleRange();
+        target = null;
         ui.SetActive(false);
     }
 

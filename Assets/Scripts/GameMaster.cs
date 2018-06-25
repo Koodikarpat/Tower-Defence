@@ -6,12 +6,13 @@ public class GameMaster : MonoBehaviour {
 
     public static int EnemiesAlive = 0;
 
- 
+    
     public static int goldamount = 0;
     public Text money;
     public Text roundcount;
     public Text Livescounter;
-
+    public static int Totalscore = 0;
+    public Text Score;
     public Wave[] waves;
 
     public static int enemytype = 1;
@@ -23,6 +24,9 @@ public class GameMaster : MonoBehaviour {
     private float countdown = 2.5f;
     public int waveIndex = 0;
     public Text waveCountdownText;
+    bool FastForwardOn = false;
+    public GameObject speedButton;
+
 
 
     public static GameMaster instance = null;              //Static instance of GameManager which allows it to be accessed by any other script.
@@ -50,6 +54,8 @@ public class GameMaster : MonoBehaviour {
 
     private void Start()
     {
+        Totalscore = 0;
+        Scoreupdate(0);
         goldamount = 600;
         goldupdate(0);
     }
@@ -140,7 +146,11 @@ public class GameMaster : MonoBehaviour {
     {
         Instantiate(enemy, spawnPoint.position, spawnPoint.rotation);
     }
-
+    public void Scoreupdate(int amount)
+    {
+        Totalscore += amount;
+        Score.text = "Score :" + Totalscore;
+    }
     public void goldupdate(int amount)
     {
         goldamount += amount;
@@ -158,4 +168,21 @@ public class GameMaster : MonoBehaviour {
     {
         Debug.Log("LEVEL WON");
     }
+
+    public void FastForward()
+    {
+        FastForwardOn = !FastForwardOn;
+        if(FastForwardOn)
+            {
+            speedButton.GetComponentInChildren<Text>().text = "1x speed";
+            Time.timeScale = 1;
+            }
+        else
+        {
+            Time.timeScale = 3;
+            speedButton.GetComponentInChildren<Text>().text = "3x speed";
+        }
+        
+    }
+
 }

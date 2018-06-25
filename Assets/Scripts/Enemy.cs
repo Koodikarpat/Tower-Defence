@@ -98,6 +98,7 @@ public class Enemy : MonoBehaviour
     
         if ( health <= 0) {
             gameMaster.GetComponent<GameMaster>().goldupdate(75);
+            gameMaster.GetComponent<GameMaster>().Scoreupdate(1);
             Destroy(gameObject);
             GameMaster.EnemiesAlive--;
         }
