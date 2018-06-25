@@ -32,37 +32,47 @@ public class Nodes : MonoBehaviour {
         text = GameObject.Find("GameUICanvas").transform.Find("NoMoneyBG").gameObject;
     }
 
-    void OnMouseDown()
+    void OnMouseOver()
     {
-        GameObject turretToBuild = buildManager.getTurretToBuild();
-        if (turretToBuild != null && GameMaster.goldamount >= turretToBuild.GetComponent<turret>().cost)
+        if (Input.GetMouseButton(0))
         {
-            if (buildManager.getTurretToBuild() == null)
-                return;
-
-            if (turret != null)
+            GameObject turretToBuild = buildManager.getTurretToBuild();
+            if (turretToBuild != null && GameMaster.goldamount >= turretToBuild.GetComponent<turret>().cost)
             {
-                Debug.Log("Can't build there! - TODO: Display on screen.");
-                return;
+                if (buildManager.getTurretToBuild() == null)
+                    return;
+
+                if (turret != null)
+                {
+                    Debug.Log("Can't build there! - TODO: Display on screen.");
+                    return;
+                }
+
+                // GameObject turretToBuild = buildManager.getTurretToBuild();
+                turret = (GameObject)Instantiate(turretToBuild, new Vector3(transform.position.x, transform.position.y, -1), transform.rotation);
+                gameMaster.GetComponent<GameMaster>().goldupdate(-turret.GetComponent<turret>().cost);
+
+                if (text.activeSelf)
+                {
+                    text.SetActive(false);
+
+                }
             }
-
-            // GameObject turretToBuild = buildManager.getTurretToBuild();
-            turret = (GameObject)Instantiate(turretToBuild, new Vector3(transform.position.x, transform.position.y, -1), transform.rotation);
-            gameMaster.GetComponent<GameMaster>().goldupdate(-turret.GetComponent<turret>().cost);
-
-            if (text.activeSelf)
-            {
-                text.SetActive(false);
-
-            }
+            else if (turretToBuild != null) text.SetActive(true);
+            //timerEnded();
         }
-        else if (turretToBuild != null) text.SetActive(true);
-        //timerEnded();
+        if (Input.GetMouseButton(1))
+        {
+             buildManager.setTurretToBuild(null);
+             rend.material.color = startColor;
+        }
     }
 
     void OnMouseEnter()
     {
         if (EventSystem.current.IsPointerOverGameObject())
+            return;
+        if (buildManager.getTurretToBuild() == null)
             return;
 
         rend.material.color = hoverColor;

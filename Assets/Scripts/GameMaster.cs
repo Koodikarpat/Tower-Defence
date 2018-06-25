@@ -10,9 +10,12 @@ public class GameMaster : MonoBehaviour {
     public Transform enemyPreFab;
     public Transform spawnPoint;
     public float timeBetweenWaves = 5f;
-    private float countdown = 2.5f;
+    private float countdown;
     private int waveIndex = 1;
     public Text waveCountdownText;
+    public Image timerBar;
+    private bool isFirstCountDown = true;
+    public float firstCountDown = 2.5f;
 
     public static GameMaster instance = null;              //Static instance of GameManager which allows it to be accessed by any other script.
 
@@ -39,6 +42,7 @@ public class GameMaster : MonoBehaviour {
 
     private void Start()
     {
+        countdown = firstCountDown;
         goldamount = 600;
         goldupdate(0);
     }
@@ -50,9 +54,19 @@ public class GameMaster : MonoBehaviour {
         {
             StartCoroutine(SpawnWave());
             countdown = timeBetweenWaves;
+            isFirstCountDown = false;
         }
         countdown -=Time.deltaTime;
         waveCountdownText.text = Mathf.Round(countdown).ToString();
+        if (isFirstCountDown)
+        {
+            timerBar.fillAmount = countdown / firstCountDown;
+        }
+        else
+        {
+            timerBar.fillAmount = countdown / timeBetweenWaves;
+        }
+
 
         
     }
