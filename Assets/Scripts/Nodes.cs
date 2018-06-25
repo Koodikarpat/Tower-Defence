@@ -75,6 +75,8 @@ public class Nodes : MonoBehaviour {
         if (buildManager.getTurretToBuild() == null)
             return;
 
+        if (!buildManager.CanBuild)
+            return;
         rend.material.color = hoverColor;
     }
 
@@ -91,11 +93,11 @@ public class Nodes : MonoBehaviour {
             timerEnded();
         }
 
-        if (text.activeSelf)
+        /*if (text.activeSelf)
         {
             targetTime -= Time.deltaTime;
         }
-
+        */
     }
 
     void timerEnded()

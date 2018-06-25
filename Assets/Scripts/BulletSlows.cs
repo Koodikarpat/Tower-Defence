@@ -1,26 +1,29 @@
-﻿using System;
-using System.Collections;
+﻿using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
-public class Bullet : MonoBehaviour {
+public class BulletSlows : MonoBehaviour {
 
     private Transform target;
 
     public float speed = 5f;
     public GameObject impactEffect;
 
-    public int damage = 0;
+    public int damage = 4;
 
-    public void Seek (Transform _target)
+    public float slowAmount = 0.1f;
+
+    public void Seek(Transform _target)
     {
         target = _target;
     }
-	
-	// Update is called once per frame
-	void Update () {
-		if (target == null)
+
+    // Update is called once per frame
+    void Update()
+    {
+        if (target == null)
         {
-            
+
             Destroy(gameObject);
             return;
         }
@@ -36,13 +39,14 @@ public class Bullet : MonoBehaviour {
 
         transform.Translate(dir.normalized * distanceThisFrame, Space.World);
 
-	}
-    
-    void HitTarget()
+    }
+
+    public void HitTarget()
     {
         GameObject effectIns = (GameObject)Instantiate(impactEffect, transform.position, transform.rotation);
         Destroy(effectIns, 2f);
         target.gameObject.GetComponent<Enemy>().takeDamage(damage);
+        target.gameObject.GetComponent<Enemy>().Slow(slowAmount);
         Destroy(gameObject);
 
     }
