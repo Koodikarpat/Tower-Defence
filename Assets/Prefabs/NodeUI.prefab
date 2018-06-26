@@ -609,14 +609,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 1675546735444936}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d4e5ab0c27256fe4eb311b82f79979f0, type: 3}
+  m_Script: {fileID: 11500000, guid: 92a8830b72a5fe647aa61ac23c540bc4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ui: {fileID: 1232920249748240}
+  ui: {fileID: 1675546735444936}
   upgradeCost: 75
-  upgradeCostText: {fileID: 114101637682697530}
+  upgradeCostText: {fileID: 114289092971562480}
   upgradeButton: {fileID: 114836470177682592}
-  sellAmountText: {fileID: 114720225919484994}
+  sellAmountText: {fileID: 114762432119050926}
 --- !u!222 &222013414575823826
 CanvasRenderer:
   m_ObjectHideFlags: 1

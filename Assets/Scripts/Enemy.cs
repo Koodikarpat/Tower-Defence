@@ -74,7 +74,8 @@ public class Enemy : MonoBehaviour
             target = Waypoints.points[wavepointIndex];
 
         }
-        else {
+        else
+        {
             GameMaster.Lives--;
             Destroy(gameObject);
             Damage();
@@ -94,7 +95,8 @@ public class Enemy : MonoBehaviour
         slowTime = startSlowTime;
         healthbar.fillAmount = health / startinghealth;
     
-        if ( health <= 0) {
+        if ( health <= 0)
+        {
             gameMaster.GetComponent<GameMaster>().goldupdate(reward);
             GameObject TextTime = (GameObject)Instantiate(DeathIncome, transform.position, Quaternion.identity);
             Text DeathIncomeOT = TextTime.gameObject.GetComponentInChildren<Text>();

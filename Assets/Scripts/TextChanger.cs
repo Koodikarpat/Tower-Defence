@@ -8,15 +8,15 @@ public class TextChanger : MonoBehaviour {
     private Text TurretTextBox;
 
 	// Use this for initialization
-	void Start () {
-
+	void Start ()
+    {
         TurretTextBox = GetComponent<Text>();
-        gameObject.SetActive(false);
-		
+        gameObject.SetActive(false);		
 	}
 	
 	// Update is called once per frame
-	void Update () {
+	void Update ()
+    {
 		
 	}
 

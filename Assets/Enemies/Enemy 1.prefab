@@ -214,11 +214,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 25
+  startSpeed: 10
+  startSlowTime: 4
   damage: 20
   targetTower: {fileID: 0}
   startinghealth: 50
   healthbar: {fileID: 114127793593870192}
   gameMaster: {fileID: 0}
+  DeathIncome: {fileID: 1569124504083120, guid: b23a508b4681e7741a65f61f1b9c5b34,
+    type: 2}
+  reward: 75
 --- !u!114 &114963037147217636
 MonoBehaviour:
   m_ObjectHideFlags: 1

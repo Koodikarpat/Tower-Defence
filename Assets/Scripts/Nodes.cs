@@ -8,7 +8,7 @@ public class Nodes : MonoBehaviour {
 
     public float targetTime = 2f;
 
-    public GameObject text;
+    public GameObject noMoneyText;
 
     public Vector3 positionOffset = new Vector3(0, 0, -1);
 
@@ -29,7 +29,12 @@ public class Nodes : MonoBehaviour {
         gameMaster = GameObject.Find("GameMaster");
 
        // Debug.Log(GameObject.Find("Canvas").transform.childCount);
-        text = GameObject.Find("GameUICanvas").transform.Find("NoMoneyBG").gameObject;
+        noMoneyText = GameObject.Find("GameUICanvas").transform.Find("NoMoneyBG").gameObject;
+    }
+
+    public Vector3 GetBuildPosition()
+    {
+        return transform.position + positionOffset;
     }
 
     void OnMouseOver()
@@ -37,10 +42,25 @@ public class Nodes : MonoBehaviour {
         if (Input.GetMouseButton(0))
         {
             GameObject turretToBuild = buildManager.getTurretToBuild();
+            if (turret != null)
+            {
+                buildManager.selectNode(this);
+                return;
+            }
+            else if (turretToBuild == null)
+            {
+                buildManager.DeselectNode();
+                return;
+            }
+
             if (turretToBuild != null && GameMaster.goldamount >= turretToBuild.GetComponent<turret>().cost)
             {
                 if (buildManager.getTurretToBuild() == null)
                     return;
+
+                if (!buildManager.CanBuild)
+                    return;
+
 
                 if (turret != null)
                 {
@@ -52,13 +72,13 @@ public class Nodes : MonoBehaviour {
                 turret = (GameObject)Instantiate(turretToBuild, new Vector3(transform.position.x, transform.position.y, -1), transform.rotation);
                 gameMaster.GetComponent<GameMaster>().goldupdate(-turret.GetComponent<turret>().cost);
 
-                if (text.activeSelf)
+                if (noMoneyText.activeSelf)
                 {
-                    text.SetActive(false);
+                    noMoneyText.SetActive(false);
 
                 }
             }
-            else if (turretToBuild != null) text.SetActive(true);
+            else if (turretToBuild != null) noMoneyText.SetActive(true);
             //timerEnded();
         }
         if (Input.GetMouseButton(1))
@@ -75,8 +95,6 @@ public class Nodes : MonoBehaviour {
         if (buildManager.getTurretToBuild() == null)
             return;
 
-        if (!buildManager.CanBuild)
-            return;
         rend.material.color = hoverColor;
     }
 
@@ -93,16 +111,16 @@ public class Nodes : MonoBehaviour {
             timerEnded();
         }
 
-        /*if (text.activeSelf)
+        if (noMoneyText.activeSelf)
         {
             targetTime -= Time.deltaTime;
         }
-        */
+
     }
 
     void timerEnded()
     {
-        text.SetActive(false);
+        noMoneyText.SetActive(false);
         targetTime = 2f;
     }
 }

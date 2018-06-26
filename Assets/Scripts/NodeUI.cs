@@ -22,6 +22,7 @@ public class NodeUI : MonoBehaviour {
 
     public void SetTarget (Nodes _target)
     {
+
         if (target == _target)
         {
             Hide();
@@ -51,7 +52,7 @@ public class NodeUI : MonoBehaviour {
 
     public void Hide()
     {
-        Debug.Log("hei");
+        //Debug.Log("hei");
         if (EventSystem.current.IsPointerOverGameObject()&&!isClicked)
         {
             return;
@@ -62,8 +63,7 @@ public class NodeUI : MonoBehaviour {
     }
 
     public void Upgrade()
-    {
-        
+    {  
         target.GetComponent<Nodes>().turret.GetComponent<turret>().UpgradeTurret();
         target.GetComponent<Nodes>().gameMaster.GetComponent<GameMaster>().goldupdate(-upgradeCost);
         isClicked = true;
