@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class turret : MonoBehaviour {
+public class laser : MonoBehaviour {
 
     public Transform target;
     public Sprite[] sprites;
@@ -11,24 +11,20 @@ public class turret : MonoBehaviour {
     [Header("Unity setup Fields")]
 
     public float range = 15f;
-
+    public int damageovertime = 15;
+    private Enemy targetenemy;
     public bool uselaser = false;
     public LineRenderer lineRenderer;
     public ParticleSystem impacteffect;
-
     public float fireRate = 1f;
     private float fireCountdown = 0f;
-
     public string enemyTag = "Enemy";
-
     public Transform partToRotate;
     public float turnSpeed = 10f;
-
     public int cost;
-
     public GameObject bulletPrefab;
     public Transform firePoint;
-    
+   
     void Start() {
         InvokeRepeating("UpdateTarget", 0f, 0.5f);
         spriterender = transform.GetChild(0).GetComponent<SpriteRenderer>();
@@ -52,6 +48,7 @@ public class turret : MonoBehaviour {
         if (nearestEnemy != null && shortestDistance <= range)
         {
             target = nearestEnemy.transform;
+            targetenemy = nearestEnemy.GetComponent<Enemy>();
         } else
         {
             target = null;
@@ -67,16 +64,11 @@ public class turret : MonoBehaviour {
                 {
                     lineRenderer.enabled = false;
                     impacteffect.Stop();
-
-
                 }
                     
-            }
-
-        
+            }       
             return;
         }
-
 
        //if (target.position.x > transform.position.x)
        // {
@@ -118,13 +110,14 @@ public class turret : MonoBehaviour {
     void laser()
 
     {
+
+        targetenemy.takeDamage((int)(damageovertime * Time.deltaTime));
+
+
         if (!lineRenderer.enabled)
         {
            lineRenderer.enabled = true;
             impacteffect.Play();
-
-
-
         }
                 
  
