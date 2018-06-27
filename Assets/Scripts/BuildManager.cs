@@ -2,11 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class BuildManager : MonoBehaviour
 {
     private GameObject turretToBuild;
 
     public static BuildManager instance;
+    
 
     void Awake()
     {
@@ -21,6 +23,12 @@ public class BuildManager : MonoBehaviour
     public GameObject standardTurretPrefab;
     public GameObject anotherTurretPrefab;
 
+    public bool CanBuild { get { return turretToBuild != null; } }
+
+    private Nodes selectedNode;
+    public NodeUI nodeUI;
+
+
     public GameObject getTurretToBuild()
     {
         return turretToBuild;
@@ -29,17 +37,28 @@ public class BuildManager : MonoBehaviour
     public void setTurretToBuild(GameObject turret)
     {
         turretToBuild = turret;
-    }
 
-    // Use this for initialization
-    void Start()
+        DeselectNode();
+    }
+    
+    
+
+    public void selectNode(Nodes node)
     {
+        if (selectedNode == node)
+        {
+            DeselectNode();
+        }
+
+        selectedNode = node;
         turretToBuild = null;
+
+        nodeUI.SetTarget(node);
     }
 
-    // Update is called once per frame
-    void Update()
+    public void DeselectNode()
     {
-
+        selectedNode = null;
+        nodeUI.Hide();
     }
 }
