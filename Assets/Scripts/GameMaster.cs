@@ -141,6 +141,9 @@ public class GameMaster : MonoBehaviour {
 
 
         int totalenemies = EnemiesAlive;
+
+        waveIndex++;
+
         while (totalenemies > 0)
         {
                 enemytype = Random.Range(0, wave.enemy.Length);
@@ -157,8 +160,6 @@ public class GameMaster : MonoBehaviour {
                 wave.count[enemytype]--;
 
                 totalenemies--;
-
-                waveIndex++;
 
                 yield return new WaitForSeconds(1f / wave.rate);
             }
