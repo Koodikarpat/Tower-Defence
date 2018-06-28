@@ -22,7 +22,6 @@ public class NodeUI : MonoBehaviour {
 
     public void SetTarget (Nodes _target)
     {
-
         if (target == _target)
         {
             Hide();
@@ -33,7 +32,7 @@ public class NodeUI : MonoBehaviour {
 
         transform.position = target.GetBuildPosition();
 
-        if (!target.GetComponent<Nodes>().turret.GetComponent<turret>().isUpgraded)
+        if (!target.GetComponent<Nodes>().turret.GetComponent<TurretBase>().isUpgraded)
         {
             upgradeCostText.text = "$" + upgradeCost;
             upgradeButton.interactable = true;
@@ -44,7 +43,7 @@ public class NodeUI : MonoBehaviour {
             upgradeButton.interactable = false;
         }
 
-        sellAmountText.text = "$" + target.GetComponent<Nodes>().turret.GetComponent<turret>().GetSellAmount();
+        sellAmountText.text = "$" + target.GetComponent<Nodes>().turret.GetComponent<TurretBase>().GetSellAmount();
 
         
         ui.SetActive(true);
@@ -52,7 +51,7 @@ public class NodeUI : MonoBehaviour {
 
     public void Hide()
     {
-        //Debug.Log("hei");
+        Debug.Log("hei");
         if (EventSystem.current.IsPointerOverGameObject()&&!isClicked)
         {
             return;
@@ -63,8 +62,9 @@ public class NodeUI : MonoBehaviour {
     }
 
     public void Upgrade()
-    {  
-        target.GetComponent<Nodes>().turret.GetComponent<turret>().UpgradeTurret();
+    {
+        
+        target.GetComponent<Nodes>().turret.GetComponent<TurretBase>().UpgradeTurret();
         target.GetComponent<Nodes>().gameMaster.GetComponent<GameMaster>().goldupdate(-upgradeCost);
         isClicked = true;
         BuildManager.instance.DeselectNode();
@@ -72,7 +72,7 @@ public class NodeUI : MonoBehaviour {
 
     public void Sell()
     {
-        target.GetComponent<Nodes>().turret.GetComponent<turret>().SellTurret();
+        target.GetComponent<Nodes>().turret.GetComponent<TurretBase>().SellTurret();
         isClicked = true;
         BuildManager.instance.DeselectNode();
     }

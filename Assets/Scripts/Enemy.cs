@@ -14,15 +14,17 @@ public class Enemy : MonoBehaviour
     private Transform target;
     public GameObject targetTower;
     private int wavepointIndex = 0;
-    public int startinghealth;
+    public int startinghealth = 100;
     public Image healthbar;
     private float health;
     private float distance;
     private float travelledDistance=0;
     private Vector3 previousPosition;
     public GameObject gameMaster;
-    public GameObject DeathIncome;
-    public int reward;
+    
+
+
+
 
     void Start()
     {
@@ -74,8 +76,7 @@ public class Enemy : MonoBehaviour
             target = Waypoints.points[wavepointIndex];
 
         }
-        else
-        {
+        else {
             GameMaster.Lives--;
             Destroy(gameObject);
             Damage();
@@ -95,13 +96,8 @@ public class Enemy : MonoBehaviour
         slowTime = startSlowTime;
         healthbar.fillAmount = health / startinghealth;
     
-        if ( health <= 0)
-        {
-            gameMaster.GetComponent<GameMaster>().goldupdate(reward);
-            GameObject TextTime = (GameObject)Instantiate(DeathIncome, transform.position, Quaternion.identity);
-            Text DeathIncomeOT = TextTime.gameObject.GetComponentInChildren<Text>();
-            DeathIncomeOT.text = "+$" + reward;
-            Destroy(TextTime, 1.5f);
+        if ( health <= 0) {
+            gameMaster.GetComponent<GameMaster>().goldupdate(50);
             Destroy(gameObject);
             GameMaster.EnemiesAlive--;
         }

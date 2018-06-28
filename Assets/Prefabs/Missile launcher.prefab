@@ -19,7 +19,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4394128564256058}
-  - component: {fileID: 114718157489579262}
+  - component: {fileID: 114886843503230644}
   m_Layer: 0
   m_Name: Missile launcher
   m_TagString: Untagged
@@ -99,7 +99,7 @@ Transform:
   m_Father: {fileID: 4394128564256058}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &114718157489579262
+--- !u!114 &114886843503230644
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -107,18 +107,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 1312554520215130}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 87810dbdeec3adf4e8306d944f974879, type: 3}
+  m_Script: {fileID: 11500000, guid: 79f27a288a89bb1418bc1b99767a2105, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 0}
+  isUpgraded: 0
   range: 15
   fireRate: 1
-  enemyTag: Enemy
-  partToRotate: {fileID: 4476189632002668}
-  turnSpeed: 10
-  bulletPrefab: {fileID: 1028432689173154, guid: 0bed7a9e4de4fce4caf442f5812d43bb,
+  cost: 250
+  damageT: 0
+  bulletPrefab: {fileID: 1028432689173154, guid: a92ddef22318e984fa5033d54e38820d,
     type: 2}
-  firePoint: {fileID: 4180466145066274}
+  firePoint: {fileID: 4130214196070818, guid: 450462b3b61ce5e45a0187e4e8bc6efd, type: 2}
 --- !u!212 &212184937595538464
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -154,7 +153,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 2dd5e22ee15b7c941b3b196c6dd39b70, type: 3}
+  m_Sprite: {fileID: 21300000, guid: e17b6760278cb0a4c8065cab567e602d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

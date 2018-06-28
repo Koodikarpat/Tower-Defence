@@ -2,19 +2,11 @@
 using System.Collections;
 using UnityEngine;
 
-public class Bullet : MonoBehaviour {
+public class Bullet : ProjectileBase {
 
-    private Transform target;
+  
 
-    public float speed = 5f;
-    public GameObject impactEffect;
-
-    public int damage = 0;
-
-    public void Seek (Transform _target)
-    {
-        target = _target;
-    }
+   
 	
 	// Update is called once per frame
 	void Update () {
@@ -38,12 +30,5 @@ public class Bullet : MonoBehaviour {
 
 	}
     
-    void HitTarget()
-    {
-        GameObject effectIns = (GameObject)Instantiate(impactEffect, transform.position, transform.rotation);
-        Destroy(effectIns, 2f);
-        target.gameObject.GetComponent<Enemy>().takeDamage(damage);
-        Destroy(gameObject);
-
-    }
+    
 }
