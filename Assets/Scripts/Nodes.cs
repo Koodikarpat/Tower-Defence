@@ -8,7 +8,7 @@ public class Nodes : MonoBehaviour {
 
     public float targetTime = 2f;
 
-    public GameObject noMoneyText;
+    public GameObject text;
 
     public Vector3 positionOffset = new Vector3(0, 0, -1);
 
@@ -29,7 +29,7 @@ public class Nodes : MonoBehaviour {
         gameMaster = GameObject.Find("GameMaster");
 
        // Debug.Log(GameObject.Find("Canvas").transform.childCount);
-        noMoneyText = GameObject.Find("GameUICanvas").transform.Find("NoMoneyBG").gameObject;
+        text = GameObject.Find("GameUICanvas").transform.Find("NoMoneyBG").gameObject;
     }
 
     public Vector3 GetBuildPosition()
@@ -37,9 +37,9 @@ public class Nodes : MonoBehaviour {
         return transform.position + positionOffset;
     }
 
-    void OnMouseOver()
+    void OnMouseDown()
     {
-        if (Input.GetMouseButton(0))
+        if (!EventSystem.current.IsPointerOverGameObject())
         {
             GameObject turretToBuild = buildManager.getTurretToBuild();
             if (turret != null)
@@ -53,38 +53,20 @@ public class Nodes : MonoBehaviour {
                 return;
             }
 
-            if (turretToBuild != null && GameMaster.goldamount >= turretToBuild.GetComponent<turret>().cost)
+            TurretBase turretScript = turretToBuild.GetComponent<TurretBase>();
+            if (turretToBuild != null && turretScript != null && GameMaster.goldamount >= turretScript.cost)
             {
+
                 if (buildManager.getTurretToBuild() == null)
                     return;
 
                 if (!buildManager.CanBuild)
                     return;
 
-
-                if (turret != null)
-                {
-                    Debug.Log("Can't build there! - TODO: Display on screen.");
-                    return;
-                }
-
-                // GameObject turretToBuild = buildManager.getTurretToBuild();
                 turret = (GameObject)Instantiate(turretToBuild, new Vector3(transform.position.x, transform.position.y, -1), transform.rotation);
-                gameMaster.GetComponent<GameMaster>().goldupdate(-turret.GetComponent<turret>().cost);
+                gameMaster.GetComponent<GameMaster>().goldupdate(-turretScript.cost);
 
-                if (noMoneyText.activeSelf)
-                {
-                    noMoneyText.SetActive(false);
-
-                }
             }
-            else if (turretToBuild != null) noMoneyText.SetActive(true);
-            //timerEnded();
-        }
-        if (Input.GetMouseButton(1))
-        {
-             buildManager.setTurretToBuild(null);
-             rend.material.color = startColor;
         }
     }
 
@@ -92,9 +74,9 @@ public class Nodes : MonoBehaviour {
     {
         if (EventSystem.current.IsPointerOverGameObject())
             return;
-        if (buildManager.getTurretToBuild() == null)
-            return;
 
+        if (!buildManager.CanBuild)
+            return;
         rend.material.color = hoverColor;
     }
 
@@ -111,16 +93,16 @@ public class Nodes : MonoBehaviour {
             timerEnded();
         }
 
-        if (noMoneyText.activeSelf)
+        /*if (text.activeSelf)
         {
             targetTime -= Time.deltaTime;
         }
-
+        */
     }
 
     void timerEnded()
     {
-        noMoneyText.SetActive(false);
+        text.SetActive(false);
         targetTime = 2f;
     }
 }

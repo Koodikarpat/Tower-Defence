@@ -22,6 +22,7 @@ public class BuildManager : MonoBehaviour
 
     public GameObject standardTurretPrefab;
     public GameObject anotherTurretPrefab;
+    public GameObject thirdTurretPrefab;
 
     public bool CanBuild { get { return turretToBuild != null; } }
 
