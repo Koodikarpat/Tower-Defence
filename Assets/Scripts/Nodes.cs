@@ -3,8 +3,9 @@ using UnityEngine.EventSystems;
 
 public class Nodes : MonoBehaviour {
 
-    private Color startColor;
+    //private Color startColor;
     public Color hoverColor;
+    public Color transparent;
 
     public float targetTime = 2f;
 
@@ -23,7 +24,8 @@ public class Nodes : MonoBehaviour {
     void Start()
     {
         rend = GetComponent<SpriteRenderer>();
-        startColor = rend.material.color;
+        //startColor = rend.material.color;
+        rend.material.color = transparent;
 
         buildManager = BuildManager.instance;
         gameMaster = GameObject.Find("GameMaster");
@@ -84,7 +86,7 @@ public class Nodes : MonoBehaviour {
         if (Input.GetMouseButton(1))
         {
              buildManager.setTurretToBuild(null);
-             rend.material.color = startColor;
+             rend.material.color = transparent;
         }
     }
 
@@ -96,11 +98,12 @@ public class Nodes : MonoBehaviour {
             return;
 
         rend.material.color = hoverColor;
+        
     }
 
     void OnMouseExit()
     {
-        rend.material.color = startColor;
+        rend.material.color = transparent;
     }
 
     void Update()

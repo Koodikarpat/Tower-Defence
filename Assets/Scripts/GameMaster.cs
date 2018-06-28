@@ -29,6 +29,7 @@ public class GameMaster : MonoBehaviour {
     private bool isFirstCountDown = true;
     private bool isWaveOn = false;
     private bool isTimerOn = true;
+    public GameObject sprites;
 
     public static GameMaster instance = null;              //Static instance of GameManager which allows it to be accessed by any other script.
 
@@ -55,6 +56,7 @@ public class GameMaster : MonoBehaviour {
 
     private void Start()
     {
+        sprites.SetActive(true);
         //winningText.GetComponent<Text>().enabled = false;
         countdown = firstCountDown;
         goldamount = 600;
