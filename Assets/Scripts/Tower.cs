@@ -13,7 +13,7 @@ public class Tower : MonoBehaviour
       
     void Update()
     {
-        healthText.text = "Health: " + health.ToString();
+        healthText.text = health.ToString();
         if (gameEnded)
         {
             return;

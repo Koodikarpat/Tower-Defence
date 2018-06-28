@@ -39,41 +39,35 @@ public class Nodes : MonoBehaviour {
 
     void OnMouseDown()
     {
-        GameObject turretToBuild = buildManager.getTurretToBuild();
-        if (turret != null)
+        if (!EventSystem.current.IsPointerOverGameObject())
         {
-            buildManager.selectNode(this);
-            return;
-        }
-        else if(turretToBuild == null)
-        {
-            buildManager.DeselectNode();
-            return;
-        }
-
-
-        
-        if (turretToBuild != null && GameMaster.goldamount >= turretToBuild.GetComponent<turret>().cost)
-        {
-            
-            if (buildManager.getTurretToBuild() == null)
-                return;
-
-            if (!buildManager.CanBuild)
-                return;
-
-            // GameObject turretToBuild = buildManager.getTurretToBuild();
-            turret = (GameObject)Instantiate(turretToBuild, new Vector3(transform.position.x, transform.position.y, -1), transform.rotation);
-            gameMaster.GetComponent<GameMaster>().goldupdate(-turret.GetComponent<turret>().cost);
-
-            /*if (text.activeSelf)
+            GameObject turretToBuild = buildManager.getTurretToBuild();
+            if (turret != null)
             {
-                text.SetActive(false);
+                buildManager.selectNode(this);
+                return;
+            }
+            else if (turretToBuild == null)
+            {
+                buildManager.DeselectNode();
+                return;
+            }
 
-            }*/
+            TurretBase turretScript = turretToBuild.GetComponent<TurretBase>();
+            if (turretToBuild != null && turretScript != null && GameMaster.goldamount >= turretScript.cost)
+            {
+
+                if (buildManager.getTurretToBuild() == null)
+                    return;
+
+                if (!buildManager.CanBuild)
+                    return;
+
+                turret = (GameObject)Instantiate(turretToBuild, new Vector3(transform.position.x, transform.position.y, -1), transform.rotation);
+                gameMaster.GetComponent<GameMaster>().goldupdate(-turretScript.cost);
+
+            }
         }
-        //else if (turretToBuild != null) text.SetActive(true);
-        //timerEnded();
     }
 
     void OnMouseEnter()

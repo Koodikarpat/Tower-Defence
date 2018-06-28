@@ -22,15 +22,19 @@ public class GameMaster : MonoBehaviour {
  
     public Transform spawnPoint;
     public float timeBetweenWaves = 5f;
-    private float countdown = 2.5f;
-    public int waveIndex = 0;
+    private float countdown;
+    public float firstCountDown = 2.5f;
+    private int waveIndex = 0;
     public Text waveCountdownText;
+    //public Text winningText;
+    public Image timerBar;
+    private bool isFirstCountDown = true;
+    private bool isWaveOn = false;
+    private bool isTimerOn = true;
     bool FastForwardOn = false;
     public GameObject speedButton;
     
     
-
-
 
     public static GameMaster instance = null;              //Static instance of GameManager which allows it to be accessed by any other script.
 
@@ -57,10 +61,13 @@ public class GameMaster : MonoBehaviour {
 
     private void Start()
     {
+        //winningText.GetComponent<Text>().enabled = false;
+        countdown = firstCountDown;
         Totalscore = 0;
         Scoreupdate(0);
         goldamount = 600;
         goldupdate(0);
+        waveCountdownText.GetComponent<Text> ().enabled = true;
     }
 
 
@@ -68,12 +75,30 @@ public class GameMaster : MonoBehaviour {
     {
        
         //Livescounter.text = "Lives: " + Lives;
-
-        if (EnemiesAlive > 0)
+        //Debug.Log("enemies " + EnemiesAlive);
+        if (isTimerOn && !isWaveOn)
         {
+            waveCountdownText.GetComponent<Text>().enabled = true;
 
+            timerBar.GetComponent<Image>().enabled = true;
+        }
+        else
+        {
+            waveCountdownText.GetComponent<Text>().enabled = false;
+
+            timerBar.GetComponent<Image>().enabled = false;
+        }
+
+        if (EnemiesAlive <= 0 && !isFirstCountDown)
+        {
+            isWaveOn = false;
+        }
+        if (countdown <= 0f && !isWaveOn)
+        {
+            isFirstCountDown = false;
+            StartCoroutine(SpawnWave());
+            countdown = timeBetweenWaves;
             return;
-
         }
         else
         {
@@ -82,50 +107,57 @@ public class GameMaster : MonoBehaviour {
                 Scoreupdate(5);
                 BonusScore = true;
             }
-            if (waveIndex == waves.Length)
+            if (waveIndex == waves.Length && EnemiesAlive == 0)
             {
-                
+                isTimerOn = false;
                 GameWon();
                 this.enabled = false;
             }
+
         }
-        if (countdown <= 0f)
-            {
-                StartCoroutine(SpawnWave());
-                countdown = timeBetweenWaves;
-                return;
-            }
-        
-        countdown -=Time.deltaTime;
 
-        countdown = Mathf.Clamp(countdown, 0f, Mathf.Infinity);
-
-        waveCountdownText.text = Mathf.Round(countdown).ToString();
-
-        
-
-
-
-        if (waveIndex < waves.Length)
+        if (!isWaveOn)
         {
-            roundcount.text = "Waves: " + (waveIndex + 1) + "/" + waves.Length;
+            countdown -= Time.deltaTime;
+
+            countdown = Mathf.Clamp(countdown, 0f, Mathf.Infinity);
+
+            waveCountdownText.text = Mathf.Round(countdown).ToString();
+        }
+        
+
+        if (isFirstCountDown)
+        {
+            timerBar.fillAmount = countdown / firstCountDown;
+        }
+        else
+        {
+            timerBar.fillAmount = countdown / timeBetweenWaves;
+        }
+
+        if (waveIndex <= waves.Length)
+        {
+            roundcount.text = "Waves: " + (waveIndex) + "/" + waves.Length;
         }
 
     }
 
     IEnumerator SpawnWave()
     {
+        isWaveOn = true;
+        Wave wave = waves[waveIndex];
+        EnemiesAlive = 0;
+        foreach(int amount in wave.count)
+        {
         Starthealth = tower.GetComponent<Tower>().health;
         BonusScore = false;
            
 
         
 
-            Wave wave = waves[waveIndex];
         foreach(int amount in wave.count) {
 
             EnemiesAlive += amount;
-
         }
 
        
@@ -133,11 +165,19 @@ public class GameMaster : MonoBehaviour {
 
 
         int totalenemies = EnemiesAlive;
+
+        waveIndex++;
+
         while (totalenemies > 0)
         {
            
                 enemytype = Random.Range(0, wave.enemy.Length);
-            
+            /*foreach (int amount in wave.count)
+            {
+
+                totalenemies += amount;
+
+            }*/
             if (wave.count[enemytype] > 0)
             {
                 
@@ -146,15 +186,12 @@ public class GameMaster : MonoBehaviour {
 
                 wave.count[enemytype]--;
 
-                
                 totalenemies--;
+
                 yield return new WaitForSeconds(1f / wave.rate);
             }
 
-            
         }
-
-            waveIndex++;
 
     }
 
@@ -171,8 +208,6 @@ public class GameMaster : MonoBehaviour {
     {
         goldamount += amount;
         money.text = "$" + goldamount;
-        
-
     }
 
     void GameLost()
@@ -183,6 +218,7 @@ public class GameMaster : MonoBehaviour {
     void GameWon()
     {
         Debug.Log("LEVEL WON");
+        //winningText.GetComponent<Text>().enabled = true;
     }
 
     public void FastForward()

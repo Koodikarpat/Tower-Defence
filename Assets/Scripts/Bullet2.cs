@@ -2,21 +2,11 @@
 using System.Collections;
 using UnityEngine;
 
-public class Bullet2 : MonoBehaviour
+public class Bullet2 :ProjectileBase
 {
 
-    private Transform target;
-
-    public float speed = 70f;
     public float explosionRadius = 0f;
-    public GameObject impactEffect;
-    public int Damage = 4;
     public GameObject MissileAudio;
-
-    public void Seek(Transform _target)
-    {
-        target = _target;
-    }
 
     // Update is called once per frame
     void Update()
@@ -40,11 +30,11 @@ public class Bullet2 : MonoBehaviour
         transform.LookAt(target);
     }
 
-    void HitTarget()
+   public override void HitTarget()
     {
         GameObject effectIns = (GameObject)Instantiate(impactEffect, transform.position, Quaternion.identity);
         Destroy(effectIns, 0.3f);
-        target.gameObject.GetComponent<Enemy>().takeDamage(Damage);
+        target.gameObject.GetComponent<Enemy>().takeDamage(damage);
         Destroy(gameObject);
 
         GameObject MissileAud = (GameObject)Instantiate(MissileAudio, transform.position, transform.rotation);
@@ -64,7 +54,7 @@ public class Bullet2 : MonoBehaviour
         {
             if (collider.tag == "Enemy")
             {
-                collider.GetComponent<Enemy>().takeDamage(5);
+                collider.GetComponent<Enemy>().takeDamage(7);
             }
         }
     }

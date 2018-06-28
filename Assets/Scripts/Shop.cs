@@ -13,7 +13,7 @@ public class Shop : MonoBehaviour
     }
 
     // Use this for initialization
-    public void PurchaseStandardTurret ()
+    public void PurchaseStandardTurret()
     {
         Debug.Log("Standard Turret Selected");
         buildManager.setTurretToBuild(buildManager.standardTurretPrefab);
@@ -23,5 +23,11 @@ public class Shop : MonoBehaviour
     {
         Debug.Log("Another Turret Selected");
         buildManager.setTurretToBuild(buildManager.anotherTurretPrefab);
+    }
+
+    public void PurchaseThirdTurret()
+    {
+        Debug.Log("Third Turret Selected");
+        buildManager.setTurretToBuild(buildManager.thirdTurretPrefab);
     }
 }

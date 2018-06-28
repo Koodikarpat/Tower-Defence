@@ -19,7 +19,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4116259232206760}
-  - component: {fileID: 114801762663427838}
+  - component: {fileID: 114996489788814880}
   m_Layer: 0
   m_Name: Missile
   m_TagString: Untagged
@@ -51,7 +51,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1028432689173154}
   m_LocalRotation: {x: 0, y: -0.7071068, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: -118.581055, y: -178.72845, z: 459}
+  m_LocalPosition: {x: 22.712402, y: 53.272217, z: -1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4809745779693446}
@@ -66,7 +66,7 @@ Transform:
   m_GameObject: {fileID: 1140509897786756}
   m_LocalRotation: {x: -0.5, y: 0.5, z: -0.5, w: 0.5}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_LocalScale: {x: 3, y: 3, z: 0}
   m_Children: []
   m_Father: {fileID: 4116259232206760}
   m_RootOrder: 0
@@ -80,7 +80,7 @@ Animator:
   m_GameObject: {fileID: 1140509897786756}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: b8bed24f7691c2f47867e3248d01ee0d, type: 2}
+  m_Controller: {fileID: 9100000, guid: 3f43bc2071813224dbb403de1510822a, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -89,7 +89,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &114801762663427838
+--- !u!114 &114996489788814880
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -97,15 +97,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 1028432689173154}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b2cabb1dd1d64ba41bb5cb8b3e3b6926, type: 3}
+  m_Script: {fileID: 11500000, guid: dd880385e46e7c548970f5a3bfd54c67, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 20
-  explosionRadius: 5
-  impactEffect: {fileID: 1794523074000044, guid: 8babce09422231b4aa05e02be683e9f7,
+  speed: 70
+  impactEffect: {fileID: 1573910687086604, guid: 5c2d09ca11faffe42aca850dedfb014c,
     type: 2}
-  Damage: 4
-  MissileAudio: {fileID: 1540628990877876, guid: ebca31c55479c4b42a9ecd1a33de38ee,
+  damage: 0
+  explosionRadius: 8
+  MissileAudio: {fileID: 1540628990877876, guid: 9698d48c44e3a7845bc48dc6e06ab391,
     type: 2}
 --- !u!212 &212169098228253566
 SpriteRenderer:
@@ -142,7 +142,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300002, guid: 137e0623f917ed04184bf799a7db3df1, type: 3}
+  m_Sprite: {fileID: 21300000, guid: be4c37401dbafda4d9dc2ddb8d276f6b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

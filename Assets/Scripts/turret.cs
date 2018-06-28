@@ -2,39 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class turret : MonoBehaviour {
+public class turret : TurretBase {
 
     public GameObject Circle;
     public Transform target;
     public Sprite[] sprites;
     private SpriteRenderer renderer;
 
-    [Header("Unity setup Fields")]
 
-    public float range = 15f;
-    public float fireRate = 1f;
-    private float fireCountdown = 0f;
 
-    public string enemyTag = "Enemy";
-
-    public Transform partToRotate;
-    public float turnSpeed = 10f;
-
-    public int cost;
-
-    public GameObject gameMaster;
-
-    public bool isUpgraded=false;
-
-    public int damageT=10;
-
-    public GameObject bulletPrefab;
-    public Transform firePoint;
-
-    public int GetSellAmount()
-    {
-        return cost / 2;
-    }
 
     // Use this for initialization
     void Start() {
@@ -45,35 +21,8 @@ public class turret : MonoBehaviour {
 
     
 
-    void UpdateTarget()
-    {
-        GameObject[] enemies = GameObject.FindGameObjectsWithTag(enemyTag);
-        float shortestDistance = Mathf.Infinity;
-        GameObject nearestEnemy = null;
-        foreach (GameObject enemy in enemies)
-        {
-            float distanceToEnemy = Vector3.Distance (transform.position, enemy.transform.position);
-            if (distanceToEnemy < shortestDistance)
-            {
-                shortestDistance = distanceToEnemy;
-                nearestEnemy = enemy;
-            }
-        }
-
-        if (nearestEnemy != null && shortestDistance <= range)
-        {
-            target = nearestEnemy.transform;
-        } else
-        {
-            target = null;
-        }
-    }
-
-    // Update is called once per frame
-    void Update()
-
-        {
-        
+   
+    void Update() {
         if (target == null)
             return;
 
@@ -90,22 +39,9 @@ public class turret : MonoBehaviour {
             renderer.sprite = sprites[0];
         }
 
-
-
-
-        //Vector3 dir = target.position - transform.position;
-        //Quaternion lookRotation = Quaternion.LookRotation(dir, Vector3.forward);
-        //Vector3 rotation = Quaternion.Lerp(partToRotate.rotation, lookRotation, Time.deltaTime * turnSpeed).eulerAngles;
-        //partToRotate.rotation = Quaternion.Euler(0f, 0, rotation.z);
-
-        //partToRotate.LookAt(target, Vector3.forward);
-
-        //RaycastHit hitTarget;
-        //Vector3 aimvector = new Vector3(transform.position.x, target.position.y, transform.position.z);
-        //bool hit = Physics.Raycast(aimvector, partToRotate.transform.forward, out hitTarget);
         if (fireCountdown <= 0f)
         { 
-            shoot();
+            Shoot();
             fireCountdown = 1f / fireRate;
         }
 
@@ -113,16 +49,7 @@ public class turret : MonoBehaviour {
 
     }
 
-    void shoot()
-    {
-        GameObject bulletGO = (GameObject)Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
-        bulletGO.transform.rotation= Quaternion.Euler(0, 0, 0);
-        Bullet bullet = bulletGO.GetComponent<Bullet>();
-        bullet.damage = damageT;
 
-        if (bullet != null)
-            bullet.Seek(target);
-    }
 
     void OnDrawGizmosSelected()
     {
@@ -130,37 +57,6 @@ public class turret : MonoBehaviour {
          Gizmos.DrawWireSphere(transform.position, range);
     }
 
-    public void UpgradeTurret()
-    {
-        range += 10f;
-        damageT += 10;
-        isUpgraded = true;
-        
-    }
-
-    public void SellTurret()
-    {
-        Destroy(gameObject);
-        gameMaster.GetComponent<GameMaster>().goldupdate(GetSellAmount());
-    }
     
-    public void UpdateRange()
-
-    {
-        float Scale = range / transform.localScale.x * 2f;
-        Circle.transform.localScale = new Vector3(Scale, Scale, Scale);
-
-    }
     
-    public void ToggleRange()
-    {
-        if(Circle.gameObject.activeSelf)
-        {
-            Circle.SetActive(false);
-        }
-        else
-        {
-            Circle.SetActive(true);
-        }
-    }
 }

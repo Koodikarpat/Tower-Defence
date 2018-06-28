@@ -35,7 +35,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4279945161059706}
-  - component: {fileID: 114154376717778320}
+  - component: {fileID: 114277312263441448}
   m_Layer: 0
   m_Name: SlowingCannonball
   m_TagString: Untagged
@@ -70,7 +70,7 @@ Transform:
   m_Father: {fileID: 4279945161059706}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &114154376717778320
+--- !u!114 &114277312263441448
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -78,13 +78,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1492513831335154}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f24393de95707024b8e2d8f237b48803, type: 3}
+  m_Script: {fileID: 11500000, guid: 79944a9d5f53bc244932fb0b0a699489, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 70
-  impactEffect: {fileID: 1290809175285634, guid: 98f4969b6f81d2345a93a181f159761f,
+  impactEffect: {fileID: 1424517520487016, guid: df9410f3d1763c245985d619b070c7ed,
     type: 2}
-  damage: 4
+  damage: 0
   slowAmount: 0.5
 --- !u!212 &212504017174921890
 SpriteRenderer:
