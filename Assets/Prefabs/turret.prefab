@@ -81,6 +81,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0ae6ea750bf7784c8ebb5178e8ddb03, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Circle: {fileID: 0}
   target: {fileID: 0}
   sprites: []
   range: 15
@@ -89,6 +90,9 @@ MonoBehaviour:
   partToRotate: {fileID: 4415185994569606}
   turnSpeed: 10
   cost: 0
+  gameMaster: {fileID: 0}
+  isUpgraded: 0
+  damageT: 10
   bulletPrefab: {fileID: 1619999809346106, guid: 2618d0b6cd3b2e34b950e91e1899c7ff,
     type: 2}
   firePoint: {fileID: 4415185994569606}

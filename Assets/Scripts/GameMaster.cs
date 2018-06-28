@@ -10,11 +10,12 @@ public class GameMaster : MonoBehaviour {
     public static int goldamount = 0;
     public Text money;
     public Text roundcount;
-    public Text Livescounter;
+    public GameObject tower;
+    int Starthealth;
     public static int Totalscore = 0;
     public Text Score;
     public Wave[] waves;
-
+    bool BonusScore = false;
     public static int enemytype = 1;
 
     public static int Lives = 3;
@@ -26,6 +27,8 @@ public class GameMaster : MonoBehaviour {
     public Text waveCountdownText;
     bool FastForwardOn = false;
     public GameObject speedButton;
+    
+    
 
 
 
@@ -63,7 +66,7 @@ public class GameMaster : MonoBehaviour {
 
     void Update()
     {
-
+       
         //Livescounter.text = "Lives: " + Lives;
 
         if (EnemiesAlive > 0)
@@ -74,6 +77,11 @@ public class GameMaster : MonoBehaviour {
         }
         else
         {
+            if (Starthealth == tower.GetComponent<Tower>().health && !BonusScore)
+            {
+                Scoreupdate(5);
+                BonusScore = true;
+            }
             if (waveIndex == waves.Length)
             {
                 
@@ -94,7 +102,7 @@ public class GameMaster : MonoBehaviour {
 
         waveCountdownText.text = Mathf.Round(countdown).ToString();
 
-
+        
 
 
 
@@ -107,6 +115,9 @@ public class GameMaster : MonoBehaviour {
 
     IEnumerator SpawnWave()
     {
+        Starthealth = tower.GetComponent<Tower>().health;
+        BonusScore = false;
+           
 
         
 
@@ -117,15 +128,20 @@ public class GameMaster : MonoBehaviour {
 
         }
 
+       
+
 
 
         int totalenemies = EnemiesAlive;
         while (totalenemies > 0)
         {
+           
                 enemytype = Random.Range(0, wave.enemy.Length);
             
             if (wave.count[enemytype] > 0)
             {
+                
+
                 SpawnEnemy(wave.enemy[enemytype]);
 
                 wave.count[enemytype]--;

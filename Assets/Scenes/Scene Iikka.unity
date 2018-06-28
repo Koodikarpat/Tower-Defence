@@ -5130,7 +5130,7 @@ Transform:
   - {fileID: 1671067144}
   - {fileID: 1601852023}
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &137640760
 Prefab:
@@ -6391,7 +6391,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -155.6, y: -83.9}
+  m_AnchoredPosition: {x: -331.75, y: -90}
   m_SizeDelta: {x: 60.5, y: 47.7}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &185400293
@@ -6529,12 +6529,12 @@ Prefab:
     - target: {fileID: 224393019756225098, guid: 8cfffeb81ad8eca4da9078751cdbb8e9,
         type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: 333
+      value: 304.5
       objectReference: {fileID: 0}
     - target: {fileID: 224393019756225098, guid: 8cfffeb81ad8eca4da9078751cdbb8e9,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: 136.9
       objectReference: {fileID: 0}
     - target: {fileID: 224393019756225098, guid: 8cfffeb81ad8eca4da9078751cdbb8e9,
         type: 2}
@@ -7756,7 +7756,7 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 2100000, guid: a25449e79baab9a40bad1689ea327ffa, type: 2}
+  - {fileID: 2100000, guid: 1d3a7034124850947ac3a47595d36ec5, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -18457,7 +18457,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &519730529
 Prefab:
@@ -23304,7 +23304,7 @@ RectTransform:
   - {fileID: 185400292}
   - {fileID: 1808452146}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -25024,12 +25024,2000 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   money: {fileID: 703691224}
   roundcount: {fileID: 890353681}
-  Livescounter: {fileID: 0}
+  tower: {fileID: 2053278671}
   Score: {fileID: 1808452147}
   waves:
   - enemy:
     - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
-    count: 21000000
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
+    rate: 1
+  - enemy:
+    - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
+    count: 01000000
     rate: 1
   - enemy:
     - {fileID: 1301395707108240, guid: fa544a6cabb34bb49afb943989617f51, type: 2}
@@ -25055,7 +27043,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &724816671
 MonoBehaviour:
@@ -27240,7 +29228,7 @@ Prefab:
     - target: {fileID: 224477292028239112, guid: 7cd64bfb95b38b247842aa47fdd0b31d,
         type: 2}
       propertyPath: m_RootOrder
-      value: 12
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 224477292028239112, guid: 7cd64bfb95b38b247842aa47fdd0b31d,
         type: 2}
@@ -29990,6 +31978,8 @@ MonoBehaviour:
   ui: {fileID: 880761170}
   upgradeCost: 50
   upgradeCostText: {fileID: 1219822170}
+  upgradeButton: {fileID: 0}
+  sellAmountText: {fileID: 0}
 --- !u!1001 &881489637
 Prefab:
   m_ObjectHideFlags: 0
@@ -40454,7 +42444,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1166984776
 Prefab:
@@ -40918,7 +42908,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: 0, y: 37}
+  m_AnchoredPosition: {x: 0, y: 23.1}
   m_SizeDelta: {x: 0, y: 58.299988}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1184209171
@@ -42658,7 +44648,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0, y: -63}
+  m_AnchoredPosition: {x: 0, y: -36.350006}
   m_SizeDelta: {x: 93.2, y: 78.7}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1225734628
@@ -46143,7 +48133,7 @@ RectTransform:
   - {fileID: 2116158439}
   - {fileID: 1783196990}
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -47626,7 +49616,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4575431253390082, guid: cea9242541c92e54785fd8a595c1c171, type: 2}
       propertyPath: m_RootOrder
-      value: 5
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cea9242541c92e54785fd8a595c1c171, type: 2}
@@ -54319,7 +56309,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -116.8, y: -54.7}
+  m_AnchoredPosition: {x: -281, y: -64}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1583799848
@@ -55713,7 +57703,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1631290619
 Prefab:
@@ -62312,7 +64302,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -93.88132, y: 123}
+  m_AnchoredPosition: {x: -282, y: 139.5}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1808452147
@@ -64479,7 +66469,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1891825123 stripped
 Transform:
@@ -65468,7 +67458,7 @@ Transform:
   - {fileID: 550300919}
   - {fileID: 1204580418}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!224 &1915968356 stripped
 RectTransform:
@@ -67639,7 +69629,7 @@ Transform:
   - {fileID: 72234912}
   - {fileID: 1219062983}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1996901904 stripped
 Transform:
@@ -69512,6 +71502,11 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d3824b03a3ebc2c4fa76a375985df3a4, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &2053278671 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1033381277669418, guid: 7cd64bfb95b38b247842aa47fdd0b31d,
+    type: 2}
+  m_PrefabInternal: {fileID: 802152356}
 --- !u!114 &2053875570 stripped
 MonoBehaviour:
   m_PrefabParentObject: {fileID: 114914484281132368, guid: 30e3e83f85d0f2c4f8abac92677740e3,
@@ -70863,12 +72858,12 @@ Prefab:
     - target: {fileID: 224275966690108508, guid: a94e97f9d8389754f9c9bd113f0aa3fd,
         type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: 196.3
+      value: 329
       objectReference: {fileID: 0}
     - target: {fileID: 224275966690108508, guid: a94e97f9d8389754f9c9bd113f0aa3fd,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: 23.5
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 224275966690108508, guid: a94e97f9d8389754f9c9bd113f0aa3fd,
         type: 2}

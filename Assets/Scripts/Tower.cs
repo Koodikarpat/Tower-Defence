@@ -3,13 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Tower : MonoBehaviour {
+public class Tower : MonoBehaviour
+{ 
 
     public int health = 100;
     public Text healthText;
     private bool gameEnded=false;
     public GameObject gameManager;
-
+      
     void Update()
     {
         healthText.text = "Health: " + health.ToString();

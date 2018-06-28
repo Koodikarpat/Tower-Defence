@@ -44,6 +44,6 @@ public class Bullet : MonoBehaviour {
         Destroy(effectIns, 2f);
         target.gameObject.GetComponent<Enemy>().takeDamage(damage);
         Destroy(gameObject);
-
+  
     }
 }
