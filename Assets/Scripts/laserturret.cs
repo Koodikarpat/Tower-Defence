@@ -24,6 +24,7 @@ public class laserturret : MonoBehaviour {
     public int cost;
     public GameObject bulletPrefab;
     public Transform firePoint;
+    public Light impactlight;
    
     void Start() {
         InvokeRepeating("UpdateTarget", 0f, 0.5f);
@@ -64,6 +65,7 @@ public class laserturret : MonoBehaviour {
                 {
                     lineRenderer.enabled = false;
                     impacteffect.Stop();
+                    impactlight.enabled = false;
                 }
                     
             }       
@@ -118,13 +120,20 @@ public class laserturret : MonoBehaviour {
         {
            lineRenderer.enabled = true;
             impacteffect.Play();
+            impactlight.enabled = true; 
         }
                 
  
         lineRenderer.SetPosition(1, firePoint.position);
         lineRenderer.SetPosition(0, target.position);
 
-        impacteffect.transform.position = target.position;
+        Vector3 dir = firePoint.position - target.position;
+
+        impacteffect.transform.position = target.position + dir.normalized * 1f;
+
+        impacteffect.transform.rotation = Quaternion.LookRotation(dir);
+
+       
 
     }
   
