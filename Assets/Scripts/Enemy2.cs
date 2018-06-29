@@ -4,8 +4,8 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class Enemy2 : MonoBehaviour {
-    public float speed;
 
+    public float speed;
     public float startSpeed = 10;
     private float slowTime;
     public float startSlowTime = 4f;
@@ -24,7 +24,6 @@ public class Enemy2 : MonoBehaviour {
     Animator animator;
 
     Vector3 Lastposition;
-
 
     void Start()
     {
@@ -92,7 +91,6 @@ public class Enemy2 : MonoBehaviour {
     void GetNextWaypoint()
     {
 
-
         if (wavepointIndex <= Waypoints.points.Length - 2)
         {
 
@@ -111,7 +109,6 @@ public class Enemy2 : MonoBehaviour {
         {
             //wavepointIndex++;
         }
-
         //target = target.GetComponent<waypoint>().getwaypoint();
     }
     public void takeDamage(int damage)
@@ -128,7 +125,6 @@ public class Enemy2 : MonoBehaviour {
             Destroy(gameObject);
             GameMaster.EnemiesAlive--;
         }
-
     }
 
     public void Slow(float pct)
@@ -140,5 +136,4 @@ public class Enemy2 : MonoBehaviour {
     {
         targetTower.GetComponent<Tower>().TakeDamage(damage);
     }
-
 }

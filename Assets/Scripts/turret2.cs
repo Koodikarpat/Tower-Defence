@@ -2,12 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class turret2 : TurretBase {
+public class Turret2 : TurretBase
+{
 
     void Start()
     {
         InvokeRepeating("UpdateTarget", 0f, 0.5f);
-        gameMaster = GameObject.Find("GameMaster");
     }
 
     void Update()

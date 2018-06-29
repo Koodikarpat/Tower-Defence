@@ -5,7 +5,6 @@ public class Enemy : MonoBehaviour
 {
     
     public float speed;
-
     public float startSpeed=10;
     private float slowTime;
     public float startSlowTime=4f;
@@ -24,7 +23,6 @@ public class Enemy : MonoBehaviour
     Animator animator;
     
     Vector3 Lastposition;
-
 
     void Start()
     {
@@ -91,7 +89,6 @@ public class Enemy : MonoBehaviour
 
     void GetNextWaypoint()
     {
-      
 
         if (wavepointIndex <= Waypoints.points.Length - 2)
         {
@@ -110,7 +107,6 @@ public class Enemy : MonoBehaviour
         {
             //wavepointIndex++;
         }
-
         //target = target.GetComponent<waypoint>().getwaypoint();
     }
     public void takeDamage(int damage)
@@ -126,7 +122,6 @@ public class Enemy : MonoBehaviour
             Destroy(gameObject);
             GameMaster.EnemiesAlive--;
         }
-
     }
 
     public void Slow(float pct)
@@ -138,6 +133,5 @@ public class Enemy : MonoBehaviour
     {
         targetTower.GetComponent<Tower>().TakeDamage(damage);
     }
-
 }
 

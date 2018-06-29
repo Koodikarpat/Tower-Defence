@@ -26,7 +26,6 @@ public class NopeaÖrkki : MonoBehaviour {
 
     Vector3 Lastposition;
 
-
     void Start()
     {
         Lastposition = transform.position;
@@ -89,17 +88,13 @@ public class NopeaÖrkki : MonoBehaviour {
         }
         Lastposition = transform.position;
     }
-
     void GetNextWaypoint()
     {
 
-
         if (wavepointIndex <= Waypoints.points.Length - 2)
         {
-
             wavepointIndex++;
             target = Waypoints.points[wavepointIndex];
-
         }
         else
         {
@@ -112,7 +107,6 @@ public class NopeaÖrkki : MonoBehaviour {
         {
             //wavepointIndex++;
         }
-
         //target = target.GetComponent<waypoint>().getwaypoint();
     }
     public void takeDamage(int damage)
@@ -121,7 +115,7 @@ public class NopeaÖrkki : MonoBehaviour {
         loseHealth = true;
         slowTime = startSlowTime;
         healthbar.fillAmount = health / startinghealth;
-
+ 
         if (health <= 0)
         {
             gameMaster.GetComponent<GameMaster>().goldupdate(75);
@@ -129,17 +123,13 @@ public class NopeaÖrkki : MonoBehaviour {
             Destroy(gameObject);
             GameMaster.EnemiesAlive--;
         }
-
     }
-
     public void Slow(float pct)
     {
         speed = startSpeed * (1f - pct);
     }
-
     void Damage()
     {
         targetTower.GetComponent<Tower>().TakeDamage(damage);
     }
-
 }

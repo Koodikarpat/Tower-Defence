@@ -111,23 +111,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0ae6ea750bf7784c8ebb5178e8ddb03, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Circle: {fileID: 1469128963954352}
-  target: {fileID: 0}
-  sprites:
-  - {fileID: 21300000, guid: 9acfe56a12c0d914587f5f02c77eb15b, type: 3}
-  - {fileID: 21300002, guid: 9acfe56a12c0d914587f5f02c77eb15b, type: 3}
-  - {fileID: 21300004, guid: 9acfe56a12c0d914587f5f02c77eb15b, type: 3}
+  isUpgraded: 0
   range: 15
   fireRate: 1
-  enemyTag: Enemy
-  partToRotate: {fileID: 4273503977641732}
-  turnSpeed: 10
   cost: 100
-  isUpgraded: 0
   damageT: 10
   bulletPrefab: {fileID: 1492513831335154, guid: 43fab2bb03969df499dea143e5a99c0e,
     type: 2}
   firePoint: {fileID: 4273503977641732}
+  Circle: {fileID: 1469128963954352}
+  sprites:
+  - {fileID: 21300000, guid: 9acfe56a12c0d914587f5f02c77eb15b, type: 3}
+  - {fileID: 21300002, guid: 9acfe56a12c0d914587f5f02c77eb15b, type: 3}
+  - {fileID: 21300004, guid: 9acfe56a12c0d914587f5f02c77eb15b, type: 3}
 --- !u!212 &212322180680216278
 SpriteRenderer:
   m_ObjectHideFlags: 1

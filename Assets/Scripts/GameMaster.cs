@@ -2,11 +2,9 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-public class GameMaster : MonoBehaviour {
-
+public class GameMaster : MonoBehaviour
+{
     public static int EnemiesAlive = 0;
-
-    
     public static int goldamount = 0;
     public Text money;
     public Text roundcount;
@@ -17,9 +15,7 @@ public class GameMaster : MonoBehaviour {
     public Wave[] waves;
     bool BonusScore = false;
     public static int enemytype = 1;
-
     public static int Lives = 3;
- 
     public Transform spawnPoint;
     public float timeBetweenWaves = 5f;
     private float countdown;
@@ -33,8 +29,8 @@ public class GameMaster : MonoBehaviour {
     private bool isTimerOn = true;
     bool FastForwardOn = false;
     public GameObject speedButton;
-    
-    
+
+
 
     public static GameMaster instance = null;              //Static instance of GameManager which allows it to be accessed by any other script.
 
@@ -67,13 +63,13 @@ public class GameMaster : MonoBehaviour {
         Scoreupdate(0);
         goldamount = 600;
         goldupdate(0);
-        waveCountdownText.GetComponent<Text> ().enabled = true;
+        waveCountdownText.GetComponent<Text>().enabled = true;
     }
 
 
     void Update()
     {
-       
+
         //Livescounter.text = "Lives: " + Lives;
         //Debug.Log("enemies " + EnemiesAlive);
         if (isTimerOn && !isWaveOn)
@@ -124,7 +120,7 @@ public class GameMaster : MonoBehaviour {
 
             waveCountdownText.text = Mathf.Round(countdown).ToString();
         }
-        
+
 
         if (isFirstCountDown)
         {
@@ -147,54 +143,46 @@ public class GameMaster : MonoBehaviour {
         isWaveOn = true;
         Wave wave = waves[waveIndex];
         EnemiesAlive = 0;
-        foreach(int amount in wave.count)
+        foreach (int amount in wave.count)
         {
-        Starthealth = tower.GetComponent<Tower>().health;
-        BonusScore = false;
-           
-
-        
-
-        foreach(int amount in wave.count) {
-
-            EnemiesAlive += amount;
-        }
-
-       
+            Starthealth = tower.GetComponent<Tower>().health;
+            BonusScore = false;
 
 
 
-        int totalenemies = EnemiesAlive;
 
-        waveIndex++;
-
-        while (totalenemies > 0)
-        {
-           
-                enemytype = Random.Range(0, wave.enemy.Length);
-            /*foreach (int amount in wave.count)
+            foreach (int total in wave.count)
             {
-
-                totalenemies += amount;
-
-            }*/
-            if (wave.count[enemytype] > 0)
-            {
-                
-
-                SpawnEnemy(wave.enemy[enemytype]);
-
-                wave.count[enemytype]--;
-
-                totalenemies--;
-
-                yield return new WaitForSeconds(1f / wave.rate);
+                EnemiesAlive += total;
             }
 
+
+
+
+
+            int totalenemies = EnemiesAlive;
+
+            waveIndex++;
+
+            while (totalenemies > 0)
+            {
+                enemytype = Random.Range(0, wave.enemy.Length);
+
+                if (wave.count[enemytype] > 0)
+                {
+                    SpawnEnemy(wave.enemy[enemytype]);
+
+                    wave.count[enemytype]--;
+
+                    totalenemies--;
+
+                    yield return new WaitForSeconds(1f / wave.rate);
+                }
+            }
         }
 
-    }
 
+    }
     void SpawnEnemy(GameObject enemy)
     {
         Instantiate(enemy, spawnPoint.position, spawnPoint.rotation);
@@ -224,17 +212,15 @@ public class GameMaster : MonoBehaviour {
     public void FastForward()
     {
         FastForwardOn = !FastForwardOn;
-        if(FastForwardOn)
-            {
+        if (FastForwardOn)
+        {
             speedButton.GetComponentInChildren<Text>().text = "1x speed";
             Time.timeScale = 1;
-            }
+        }
         else
         {
             Time.timeScale = 3;
             speedButton.GetComponentInChildren<Text>().text = "3x speed";
         }
-        
     }
-
 }

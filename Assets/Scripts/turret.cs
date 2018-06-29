@@ -4,25 +4,19 @@ using UnityEngine;
 
 public class turret : TurretBase {
 
-    public GameObject Circle;
-    public Transform target;
     public Sprite[] sprites;
     private SpriteRenderer renderer;
 
-
-
-
     // Use this for initialization
-    void Start() {
+    void Start()
+    {
         InvokeRepeating("UpdateTarget", 0f, 0.5f);
         renderer = transform.GetChild(0).GetComponent<SpriteRenderer>();
         gameMaster = GameObject.Find("GameMaster");
     }
 
-    
-
-   
-    void Update() {
+    void Update()
+    {
         if (target == null)
             return;
 
@@ -46,17 +40,12 @@ public class turret : TurretBase {
         }
 
         fireCountdown -= Time.deltaTime;
-
     }
 
 
 
     void OnDrawGizmosSelected()
     {
-
-         Gizmos.DrawWireSphere(transform.position, range);
+        Gizmos.DrawWireSphere(transform.position, range);
     }
-
-    
-    
 }

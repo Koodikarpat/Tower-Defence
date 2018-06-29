@@ -46,7 +46,7 @@ public class NodeUI : MonoBehaviour {
         }
 
         sellAmountText.text = "$" + target.GetComponent<Nodes>().turret.GetComponent<TurretBase>().GetSellAmount();
-        target.GetComponent<Nodes>().turret.GetComponent<turret>().UpdateRange();
+        target.GetComponent<Nodes>().turret.GetComponent<TurretBase>().UpdateRange();
         ToggleRange();
 
 
@@ -55,7 +55,7 @@ public class NodeUI : MonoBehaviour {
     }
     void ToggleRange()
     {
-       if(target != null) target.GetComponent<Nodes>().turret.GetComponent<turret>().ToggleRange();
+       if(target != null) target.GetComponent<Nodes>().turret.GetComponent<TurretBase>().ToggleRange();
     }
     public void Hide()
     {
@@ -73,7 +73,6 @@ public class NodeUI : MonoBehaviour {
 
     public void Upgrade()
     {
-        
         target.GetComponent<Nodes>().turret.GetComponent<TurretBase>().UpgradeTurret();
         target.GetComponent<Nodes>().gameMaster.GetComponent<GameMaster>().goldupdate(-upgradeCost);
         isClicked = true;
