@@ -4,17 +4,17 @@ using UnityEngine.UI;
 public class Enemy : MonoBehaviour
 {
     
-    public float speed;
+    private float speed;
 
-    public float startSpeed=10;
+    public float startSpeed;
     private float slowTime;
-    public float startSlowTime=4f;
+    public float startSlowTime;
     private bool loseHealth = false;
-    public int damage = 20;
+    public int damage;
     private Transform target;
     public GameObject targetTower;
     private int wavepointIndex = 0;
-    public int startinghealth = 100;
+    public int startinghealth;
     public Image healthbar;
     private float health;
     private float distance;

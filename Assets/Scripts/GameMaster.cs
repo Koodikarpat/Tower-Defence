@@ -10,7 +10,6 @@ public class GameMaster : MonoBehaviour {
     public static int goldamount = 0;
     public Text money;
     public Text roundcount;
-    public Text Livescounter;
 
     public Wave[] waves;
 

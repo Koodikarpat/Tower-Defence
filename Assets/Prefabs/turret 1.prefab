@@ -19,7 +19,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4273503977641732}
-  - component: {fileID: 114937901553259310}
+  - component: {fileID: 114542603366899976}
   m_Layer: 0
   m_Name: turret 1
   m_TagString: Untagged
@@ -70,7 +70,7 @@ Transform:
   m_Father: {fileID: 4273503977641732}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &114937901553259310
+--- !u!114 &114542603366899976
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -78,23 +78,21 @@ MonoBehaviour:
   m_GameObject: {fileID: 1078863792511460}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f0ae6ea750bf7784c8ebb5178e8ddb03, type: 3}
+  m_Script: {fileID: 11500000, guid: 5ad6057361f7a1746b5a38fa94be00c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 0}
+  isUpgraded: 0
+  range: 10
+  fireRate: 1
+  cost: 100
+  damageT: 10
+  bulletPrefab: {fileID: 1492513831335154, guid: 43fab2bb03969df499dea143e5a99c0e,
+    type: 2}
+  firePoint: {fileID: 4273503977641732}
   sprites:
   - {fileID: 21300000, guid: 9acfe56a12c0d914587f5f02c77eb15b, type: 3}
   - {fileID: 21300002, guid: 9acfe56a12c0d914587f5f02c77eb15b, type: 3}
   - {fileID: 21300004, guid: 9acfe56a12c0d914587f5f02c77eb15b, type: 3}
-  range: 15
-  fireRate: 1
-  enemyTag: Enemy
-  partToRotate: {fileID: 4273503977641732}
-  turnSpeed: 10
-  cost: 100
-  bulletPrefab: {fileID: 1492513831335154, guid: 43fab2bb03969df499dea143e5a99c0e,
-    type: 2}
-  firePoint: {fileID: 4273503977641732}
 --- !u!212 &212322180680216278
 SpriteRenderer:
   m_ObjectHideFlags: 1
