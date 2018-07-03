@@ -14,6 +14,7 @@ public class HealthLoseText : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+        transform.position = transform.position + new Vector3(-35, 5, 0);
         targetPosition = transform.position;
         startingPosition = transform.position;
 	}

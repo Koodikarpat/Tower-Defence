@@ -35,7 +35,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4843326104141838}
-  - component: {fileID: 114095148942576462}
+  - component: {fileID: 114333844147813366}
   m_Layer: 0
   m_Name: turretSlows
   m_TagString: Untagged
@@ -49,28 +49,28 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1567955562915452}
-  m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 11.4, y: 45.3, z: -1.32}
-  m_LocalScale: {x: 5, y: 1, z: 5}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 26.92041, y: 44.603516, z: -1.32}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4927960296097518}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4927960296097518
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1233591149037168}
-  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4843326104141838}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
---- !u!114 &114095148942576462
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &114333844147813366
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -78,20 +78,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 1567955562915452}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3fed64b7524844a4a9fde7fbeae42c43, type: 3}
+  m_Script: {fileID: 11500000, guid: 68a0eabd3b9c7a04a9ff72543b778362, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 0}
-  sprites:
-  - {fileID: 21300000, guid: 9acfe56a12c0d914587f5f02c77eb15b, type: 3}
-  - {fileID: 21300002, guid: 9acfe56a12c0d914587f5f02c77eb15b, type: 3}
-  - {fileID: 21300004, guid: 9acfe56a12c0d914587f5f02c77eb15b, type: 3}
-  range: 15
-  fireRate: 1
-  enemyTag: Enemy
-  partToRotate: {fileID: 4843326104141838}
-  turnSpeed: 10
-  bulletPrefab: {fileID: 1492513831335154, guid: c18755e7b37a0e243ab055338ba43e10,
+  isUpgraded: 0
+  range: 12
+  fireRate: 1.5
+  cost: 150
+  damageT: 6
+  bulletPrefab: {fileID: 1492513831335154, guid: f826399e059431140839285a33ac8967,
     type: 2}
   firePoint: {fileID: 4843326104141838}
 --- !u!212 &212530132217700816
@@ -129,7 +124,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 9acfe56a12c0d914587f5f02c77eb15b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 31ed8806ef537144c9c3a0bcfda716eb, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

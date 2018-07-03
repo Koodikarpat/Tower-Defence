@@ -2,23 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BulletSlows : MonoBehaviour {
-
-    private Transform target;
-
-    public float speed = 5f;
-    public GameObject impactEffect;
-
-    public int damage = 4;
+public class BulletSlows : ProjectileBase {
 
     public float slowAmount = 0.1f;
 
-    public void Seek(Transform _target)
-    {
-        target = _target;
-    }
-
-    // Update is called once per frame
     void Update()
     {
         if (target == null)
@@ -41,7 +28,7 @@ public class BulletSlows : MonoBehaviour {
 
     }
 
-    public void HitTarget()
+    public override void HitTarget()
     {
         GameObject effectIns = (GameObject)Instantiate(impactEffect, transform.position, transform.rotation);
         Destroy(effectIns, 2f);
