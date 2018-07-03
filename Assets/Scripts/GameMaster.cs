@@ -2,22 +2,20 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-public class GameMaster : MonoBehaviour {
-
+public class GameMaster : MonoBehaviour
+{
     public static int EnemiesAlive = 0;
-
- 
     public static int goldamount = 0;
     public Text money;
     public Text roundcount;
-    public Text Livescounter;
-
+    public GameObject tower;
+    int Starthealth;
+    public static int Totalscore = 0;
+    public Text Score;
     public Wave[] waves;
-
+    bool BonusScore = false;
     public static int enemytype = 1;
-
     public static int Lives = 3;
- 
     public Transform spawnPoint;
     public float timeBetweenWaves = 5f;
     private float countdown;
@@ -30,6 +28,10 @@ public class GameMaster : MonoBehaviour {
     private bool isWaveOn = false;
     private bool isTimerOn = true;
     public GameObject sprites;
+    bool FastForwardOn = false;
+    public GameObject speedButton;
+
+
 
     public static GameMaster instance = null;              //Static instance of GameManager which allows it to be accessed by any other script.
 
@@ -59,9 +61,11 @@ public class GameMaster : MonoBehaviour {
         sprites.SetActive(true);
         //winningText.GetComponent<Text>().enabled = false;
         countdown = firstCountDown;
+        Totalscore = 0;
+        Scoreupdate(0);
         goldamount = 600;
         goldupdate(0);
-        waveCountdownText.GetComponent<Text> ().enabled = true;
+        waveCountdownText.GetComponent<Text>().enabled = true;
     }
 
 
@@ -96,6 +100,11 @@ public class GameMaster : MonoBehaviour {
         }
         else
         {
+            if (Starthealth == tower.GetComponent<Tower>().health && !BonusScore)
+            {
+                Scoreupdate(5);
+                BonusScore = true;
+            }
             if (waveIndex == waves.Length && EnemiesAlive == 0)
             {
                 isTimerOn = false;
@@ -113,6 +122,7 @@ public class GameMaster : MonoBehaviour {
 
             waveCountdownText.text = Mathf.Round(countdown).ToString();
         }
+
 
         if (isFirstCountDown)
         {
@@ -135,46 +145,55 @@ public class GameMaster : MonoBehaviour {
         isWaveOn = true;
         Wave wave = waves[waveIndex];
         EnemiesAlive = 0;
-        foreach(int amount in wave.count)
+        foreach (int amount in wave.count)
         {
-            EnemiesAlive += amount;
-        }
+            Starthealth = tower.GetComponent<Tower>().health;
+            BonusScore = false;
 
 
 
-        int totalenemies = EnemiesAlive;
 
-        waveIndex++;
-
-        while (totalenemies > 0)
-        {
-                enemytype = Random.Range(0, wave.enemy.Length);
-            /*foreach (int amount in wave.count)
+            foreach (int total in wave.count)
             {
-
-                totalenemies += amount;
-
-            }*/
-            if (wave.count[enemytype] > 0)
-            {
-                SpawnEnemy(wave.enemy[enemytype]);
-
-                wave.count[enemytype]--;
-
-                totalenemies--;
-
-                yield return new WaitForSeconds(1f / wave.rate);
+                EnemiesAlive += total;
             }
 
+
+
+
+
+            int totalenemies = EnemiesAlive;
+
+            waveIndex++;
+
+            while (totalenemies > 0)
+            {
+                enemytype = Random.Range(0, wave.enemy.Length);
+
+                if (wave.count[enemytype] > 0)
+                {
+                    SpawnEnemy(wave.enemy[enemytype]);
+
+                    wave.count[enemytype]--;
+
+                    totalenemies--;
+
+                    yield return new WaitForSeconds(1f / wave.rate);
+                }
+            }
         }
 
-    }
 
+    }
     void SpawnEnemy(GameObject enemy)
     {
         Instantiate(enemy, spawnPoint.position, spawnPoint.rotation);
     }
-
+    public void Scoreupdate(int amount)
+    {
+        Totalscore += amount;
+        Score.text = "Score :" + Totalscore;
+    }
     public void goldupdate(int amount)
     {
         goldamount += amount;
@@ -190,5 +209,20 @@ public class GameMaster : MonoBehaviour {
     {
         Debug.Log("LEVEL WON");
         //winningText.GetComponent<Text>().enabled = true;
+    }
+
+    public void FastForward()
+    {
+        FastForwardOn = !FastForwardOn;
+        if (FastForwardOn)
+        {
+            speedButton.GetComponentInChildren<Text>().text = "1x speed";
+            Time.timeScale = 1;
+        }
+        else
+        {
+            Time.timeScale = 3;
+            speedButton.GetComponentInChildren<Text>().text = "3x speed";
+        }
     }
 }

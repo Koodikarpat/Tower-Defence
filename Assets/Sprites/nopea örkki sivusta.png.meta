@@ -1,7 +1,10 @@
 fileFormatVersion: 2
-guid: 13cda99f1e4df3b4a8fa01aeddd4e64a
+guid: 6bdc9fc94d935d34892b48a3f5ba9a4a
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: "nopea \xF6rkki sivusta_0"
+    21300002: "nopea \xF6rkki sivusta_1"
+    21300004: "nopea \xF6rkki sivusta_2"
   externalObjects: {}
   serializedVersion: 5
   mipmaps:
@@ -38,7 +41,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -67,13 +70,84 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: "nopea \xF6rkki sivusta_0"
+      rect:
+        serializedVersion: 2
+        x: 26
+        y: 237
+        width: 31
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c0ec9bf421a6c0e42bb75bba3c6e8a78
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "nopea \xF6rkki sivusta_1"
+      rect:
+        serializedVersion: 2
+        x: 27
+        y: 171
+        width: 33
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bace14d7f821a424f9958e86f9be6016
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "nopea \xF6rkki sivusta_2"
+      rect:
+        serializedVersion: 2
+        x: 25
+        y: 102
+        width: 36
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fa13c000948bb1e4e930b70fe71439e0
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
-    spriteID: fa1d47308963aa349b125561fdd73bd8
+    spriteID: b4c53757c17a42b48b233139eb172a94
     vertices: []
     indices: 
     edges: []

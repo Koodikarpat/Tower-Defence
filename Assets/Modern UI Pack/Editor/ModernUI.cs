@@ -42,7 +42,7 @@ public class ModernUIEditor : EditorWindow {
 		Instantiate(Resources.Load<GameObject>("Buttons/Box With Image")).GetComponent<ModernUIEditor>();
 	}
 
-	[MenuItem("Tools/Modern UI Pack/Buttons/Circle Outline With Image")]
+	[MenuItem("Tools/Modern UI Pack/Buttons/ Outline With Image")]
 	static void CreateCircleOutlineWithImage()
 	{
 		Instantiate(Resources.Load<GameObject>("Buttons/Circle Outline With Image")).GetComponent<ModernUIEditor>();

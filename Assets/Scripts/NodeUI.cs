@@ -28,6 +28,8 @@ public class NodeUI : MonoBehaviour {
             return;
         }
 
+       ToggleRange();
+
         target = _target;
 
         transform.position = target.GetBuildPosition();
@@ -44,11 +46,17 @@ public class NodeUI : MonoBehaviour {
         }
 
         sellAmountText.text = "$" + target.GetComponent<Nodes>().turret.GetComponent<TurretBase>().GetSellAmount();
+        target.GetComponent<Nodes>().turret.GetComponent<TurretBase>().UpdateRange();
+        ToggleRange();
+
 
         
         ui.SetActive(true);
     }
-
+    void ToggleRange()
+    {
+       if(target != null) target.GetComponent<Nodes>().turret.GetComponent<TurretBase>().ToggleRange();
+    }
     public void Hide()
     {
         Debug.Log("hei");
@@ -57,13 +65,14 @@ public class NodeUI : MonoBehaviour {
             return;
         }
         isClicked = false;
+        ToggleRange();
+        target = null;
         ui.SetActive(false);
         target = null;
     }
 
     public void Upgrade()
     {
-        
         target.GetComponent<Nodes>().turret.GetComponent<TurretBase>().UpgradeTurret();
         target.GetComponent<Nodes>().gameMaster.GetComponent<GameMaster>().goldupdate(-upgradeCost);
         isClicked = true;

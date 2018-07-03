@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class laser : MonoBehaviour {
+public class laserturret : MonoBehaviour {
 
     public Transform target;
     public Sprite[] sprites;
@@ -24,6 +24,7 @@ public class laser : MonoBehaviour {
     public int cost;
     public GameObject bulletPrefab;
     public Transform firePoint;
+    public Light impactlight;
    
     void Start() {
         InvokeRepeating("UpdateTarget", 0f, 0.5f);
@@ -64,6 +65,7 @@ public class laser : MonoBehaviour {
                 {
                     lineRenderer.enabled = false;
                     impacteffect.Stop();
+                    impactlight.enabled = false;
                 }
                     
             }       
@@ -84,7 +86,7 @@ public class laser : MonoBehaviour {
     
         if (uselaser)
         {
-            laser();
+            Laser();
         }
         else
         {
@@ -107,7 +109,7 @@ public class laser : MonoBehaviour {
        partToRotate.rotation = Quaternion.Euler(0f, 0, rotation.z);
     }
   
-    void laser()
+    void Laser()
 
     {
 
@@ -118,13 +120,20 @@ public class laser : MonoBehaviour {
         {
            lineRenderer.enabled = true;
             impacteffect.Play();
+            impactlight.enabled = true; 
         }
                 
  
         lineRenderer.SetPosition(1, firePoint.position);
         lineRenderer.SetPosition(0, target.position);
 
-        impacteffect.transform.position = target.position;
+        Vector3 dir = firePoint.position - target.position;
+
+        impacteffect.transform.position = target.position + dir.normalized * 1f;
+
+        impacteffect.transform.rotation = Quaternion.LookRotation(dir);
+
+       
 
     }
   
