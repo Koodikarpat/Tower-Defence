@@ -169,21 +169,22 @@ MonoBehaviour:
   waves:
   - enemy:
     - {fileID: 1301395707108240, guid: d627e910bdf917843a4a9cf94450d732, type: 2}
-    count: 03000000
+    count: 01000000
     rate: 3
   - enemy:
     - {fileID: 1301395707108240, guid: d9156d7c2f0106948a3605da1d1f8ff0, type: 2}
-    count: 03000000
+    count: 01000000
     rate: 3
   - enemy:
     - {fileID: 1301395707108240, guid: a0a2086ed797c284386aff43e6bc3d79, type: 2}
-    count: 03000000
+    count: 01000000
     rate: 3
   spawnPoint: {fileID: 0}
   timeBetweenWaves: 5.5
   firstCountDown: 2.5
   waveCountdownText: {fileID: 0}
   timerBar: {fileID: 0}
+  sprites: {fileID: 0}
   speedButton: {fileID: 0}
 --- !u!114 &114275743428706046
 MonoBehaviour:

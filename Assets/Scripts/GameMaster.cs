@@ -22,42 +22,19 @@ public class GameMaster : MonoBehaviour
     public float firstCountDown = 2.5f;
     private int waveIndex = 0;
     public Text waveCountdownText;
-    //public Text winningText;
+    public Text winningText;
     public Image timerBar;
     private bool isFirstCountDown = true;
     private bool isWaveOn = false;
     private bool isTimerOn = true;
+    public GameObject sprites;
     bool FastForwardOn = false;
     public GameObject speedButton;
 
-
-
-    public static GameMaster instance = null;              //Static instance of GameManager which allows it to be accessed by any other script.
-
-    //Awake is always called before any Start functions
-    //void Awake()
-    //{
-
-    //    goldupdate(65);
-    //    //Check if instance already exists
-    //    if (instance == null)
-
-    //        //if not, set instance to this
-    //        instance = this;
-
-    //    //If instance already exists and it's not this:
-    //    else if (instance != this)
-
-    //        //Then destroy this. This enforces our singleton pattern, meaning there can only ever be one instance of a GameManager.
-    //        Destroy(gameObject);
-
-    //    //Sets this to not be destroyed when reloading scene
-    //    DontDestroyOnLoad(gameObject);
-    //}
-
     private void Start()
     {
-        //winningText.GetComponent<Text>().enabled = false;
+        sprites.SetActive(true);
+        winningText.GetComponent<Text>().enabled = false;
         countdown = firstCountDown;
         Totalscore = 0;
         Scoreupdate(0);
@@ -69,9 +46,6 @@ public class GameMaster : MonoBehaviour
 
     void Update()
     {
-
-        //Livescounter.text = "Lives: " + Lives;
-        //Debug.Log("enemies " + EnemiesAlive);
         if (isTimerOn && !isWaveOn)
         {
             waveCountdownText.GetComponent<Text>().enabled = true;
@@ -148,21 +122,15 @@ public class GameMaster : MonoBehaviour
             Starthealth = tower.GetComponent<Tower>().health;
             BonusScore = false;
 
-
-
-
             foreach (int total in wave.count)
             {
                 EnemiesAlive += total;
             }
 
-
-
-
-
             int totalenemies = EnemiesAlive;
 
             waveIndex++;
+            GameManagerScript.Rounds = waveIndex;
 
             while (totalenemies > 0)
             {
@@ -190,7 +158,7 @@ public class GameMaster : MonoBehaviour
     public void Scoreupdate(int amount)
     {
         Totalscore += amount;
-        Score.text = "Score :" + Totalscore;
+        Score.text = "Score: " + Totalscore;
     }
     public void goldupdate(int amount)
     {
@@ -206,7 +174,7 @@ public class GameMaster : MonoBehaviour
     void GameWon()
     {
         Debug.Log("LEVEL WON");
-        //winningText.GetComponent<Text>().enabled = true;
+        winningText.GetComponent<Text>().enabled = true;
     }
 
     public void FastForward()

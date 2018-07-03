@@ -10,20 +10,8 @@ EditorBuildSettings:
     guid: d8fd54040a2425e49b6a0ad36bbf5e7d
   - enabled: 1
     path: Assets/Main Menu/LevelSelectScene.unity
-    guid: aa1bc2494b743ba4ea22af59d17fbf8e
+    guid: 20ba843d7f1e6654e814996c9e61045e
   - enabled: 1
-    path: Assets/Scenes/Scene Flori.unity
-    guid: cdab6371322545744be29efb6f1df245
-  - enabled: 1
-    path: Assets/Scenes/Scene1.unity
-    guid: d2ec7884f43aea44d98a891af1ffd635
-  - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
-    guid: 2cda990e2423bbf4892e6590ba056729
-  - enabled: 1
-    path: Assets/Main Menu/MainMenuScene.unity
-    guid: d8fd54040a2425e49b6a0ad36bbf5e7d
-  - enabled: 1
-    path: Assets/Scenes/SceneVenny.unity
-    guid: 6004ba2d80d1e7c4fbd51aaff01458c6
+    path: Assets/Scenes/scene fixed.unity
+    guid: 8d31dbdfd2987ed4993e9823606717c9
   m_configObjects: {}

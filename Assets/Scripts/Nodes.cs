@@ -3,8 +3,10 @@ using UnityEngine.EventSystems;
 
 public class Nodes : MonoBehaviour {
 
-    private Color startColor;
+    //private Color startColor;
     public Color hoverColor;
+    public Color transparent;
+    public Color startColor;
 
     public float targetTime = 2f;
 
@@ -24,11 +26,11 @@ public class Nodes : MonoBehaviour {
     {
         rend = GetComponent<SpriteRenderer>();
         startColor = rend.material.color;
+        //rend.material.color = transparent;
 
         buildManager = BuildManager.instance;
         gameMaster = GameObject.Find("GameMaster");
 
-       // Debug.Log(GameObject.Find("Canvas").transform.childCount);
         text = GameObject.Find("GameUICanvas").transform.Find("NoMoneyBG").gameObject;
     }
 
@@ -68,6 +70,11 @@ public class Nodes : MonoBehaviour {
 
             }
         }
+        if (Input.GetMouseButton(1))
+        {
+             buildManager.setTurretToBuild(null);
+             rend.material.color = startColor;
+        }
     }
 
     void OnMouseEnter()
@@ -78,6 +85,7 @@ public class Nodes : MonoBehaviour {
         if (!buildManager.CanBuild)
             return;
         rend.material.color = hoverColor;
+        
     }
 
     void OnMouseExit()
@@ -93,11 +101,6 @@ public class Nodes : MonoBehaviour {
             timerEnded();
         }
 
-        /*if (text.activeSelf)
-        {
-            targetTime -= Time.deltaTime;
-        }
-        */
     }
 
     void timerEnded()

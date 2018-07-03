@@ -11,8 +11,8 @@ public class Cannon : TurretBase {
     void Start()
     {
         InvokeRepeating("UpdateTarget", 0f, 0.5f);
-        renderer = transform.GetChild(0).GetComponent<SpriteRenderer>();
         gameMaster = GameObject.Find("GameMaster");
+        renderer = transform.GetChild(0).GetComponent<SpriteRenderer>();
     }
 
     void Update()
@@ -40,12 +40,5 @@ public class Cannon : TurretBase {
         }
 
         fireCountdown -= Time.deltaTime;
-    }
-
-
-
-    void OnDrawGizmosSelected()
-    {
-        Gizmos.DrawWireSphere(transform.position, range);
     }
 }

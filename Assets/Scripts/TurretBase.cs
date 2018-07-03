@@ -68,7 +68,6 @@ public class TurretBase : MonoBehaviour {
         range += 10f;
         damageT += 10;
         isUpgraded = true;
-
     }
 
     public void SellTurret()
@@ -77,50 +76,25 @@ public class TurretBase : MonoBehaviour {
         gameMaster.GetComponent<GameMaster>().goldupdate(GetSellAmount());
     }
     public void UpdateRange()
-
-
-
     {
-
         float Scale = range / transform.localScale.x * 2f;
-
         Circle.transform.localScale = new Vector3(Scale, Scale, Scale);
-
-
-
     }
-
-
 
     public void ToggleRange()
-
     {
-
         if (Circle.gameObject.activeSelf)
-
         {
-
             Circle.SetActive(false);
-
         }
-
         else
-
         {
-
             Circle.SetActive(true);
-
         }
-
     }
 
-    void Start ()
+    void OnDrawGizmosSelected()
     {
-        
+        Gizmos.DrawWireSphere(transform.position, range);
     }
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
 }

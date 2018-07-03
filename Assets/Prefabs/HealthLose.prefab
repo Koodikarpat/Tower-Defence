@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 224517364903981594}
   - component: {fileID: 222565245239297402}
   - component: {fileID: 114865369045288360}
-  - component: {fileID: 114395710268518290}
+  - component: {fileID: 114767006840710058}
   m_Layer: 5
   m_Name: HealthLose
   m_TagString: Untagged
@@ -29,7 +29,7 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &114395710268518290
+--- !u!114 &114767006840710058
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -37,7 +37,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1538631943656912}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0772cb8d97cd1834ab473776d0bc7115, type: 3}
+  m_Script: {fileID: 11500000, guid: c397666812872ed4da31baf52d019494, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &114865369045288360

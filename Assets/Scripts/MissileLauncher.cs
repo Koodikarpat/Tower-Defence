@@ -8,6 +8,7 @@ public class MissileLauncher : TurretBase
     void Start()
     {
         InvokeRepeating("UpdateTarget", 0f, 0.5f);
+        gameMaster = GameObject.Find("GameMaster");
     }
 
     void Update()
@@ -23,10 +24,5 @@ public class MissileLauncher : TurretBase
 
         fireCountdown -= Time.deltaTime;
 
-    }
-
-    void OnDrawGizmosSelected()
-    {
-        Gizmos.DrawWireSphere(transform.position, range);
     }
 }

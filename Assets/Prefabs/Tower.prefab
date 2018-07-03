@@ -42,7 +42,7 @@ MonoBehaviour:
   health: 500
   healthText: {fileID: 0}
   gameManager: {fileID: 0}
-  healthLose: {fileID: 1538631943656912, guid: b81027b9e4b4d9143b7b08a385e08b2f, type: 2}
+  healthLose: {fileID: 1538631943656912, guid: 3e960fc12a305994e903da60e86bc821, type: 2}
   canvas: {fileID: 0}
 --- !u!212 &212788442635913464
 SpriteRenderer:
