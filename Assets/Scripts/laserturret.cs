@@ -86,7 +86,7 @@ public class laserturret : MonoBehaviour {
     
         if (uselaser)
         {
-            laser();
+            Laser();
         }
         else
         {
@@ -109,7 +109,7 @@ public class laserturret : MonoBehaviour {
        partToRotate.rotation = Quaternion.Euler(0f, 0, rotation.z);
     }
   
-    void laser()
+    void Laser()
 
     {
 

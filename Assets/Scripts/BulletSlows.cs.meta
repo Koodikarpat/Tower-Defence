@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:Assets/Scripts/BulletSlows.cs.meta
 guid: be2f891cc1965064c8ffe1593931cb43
+=======
+guid: 8ab79222c4e3d644ebbf2660db253c83
+>>>>>>> 2f6edff403989f45eb3c1dbc5241501f20c9f8c8:Assets/Scripts/laser.cs.meta
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2

@@ -38,7 +38,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1659623230911902}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 45.456757, y: 39.63049, z: 5.6167026}
+  m_LocalPosition: {x: -9, y: -8.8, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -55,7 +55,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 85a0b93e6887e334f9d9e1a69e34216b, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.02
+  m_Volume: 0.386
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -164,9 +164,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   money: {fileID: 0}
   roundcount: {fileID: 0}
+  tower: {fileID: 0}
+  Score: {fileID: 0}
   waves:
   - enemy:
-    - {fileID: 1301395707108240, guid: 04183dbf38e399e419e5c7f18d305fe0, type: 2}
+    - {fileID: 1301395707108240, guid: d627e910bdf917843a4a9cf94450d732, type: 2}
     count: 03000000
     rate: 3
   - enemy:
@@ -182,6 +184,7 @@ MonoBehaviour:
   firstCountDown: 2.5
   waveCountdownText: {fileID: 0}
   timerBar: {fileID: 0}
+  speedButton: {fileID: 0}
 --- !u!114 &114275743428706046
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -193,11 +196,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 79d14494a3b571a49bbaf3d08b02605a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  standardTurretPrefab: {fileID: 1078863792511460, guid: 14c5fb9ce7d04bf479319e84cb37466d,
+  standardTurretPrefab: {fileID: 1078863792511460, guid: 4212760e58b102841861259de1b8b676,
     type: 2}
-  anotherTurretPrefab: {fileID: 1078863792511460, guid: 14c5fb9ce7d04bf479319e84cb37466d,
+  anotherTurretPrefab: {fileID: 1312554520215130, guid: 7c14670063caa724ab5a42bfd4c9002a,
     type: 2}
-  thirdTurretPrefab: {fileID: 1078863792511460, guid: 14c5fb9ce7d04bf479319e84cb37466d,
+  thirdTurretPrefab: {fileID: 1567955562915452, guid: 4c4bacd42d6a16e48878a17dedf36a1e,
     type: 2}
   nodeUI: {fileID: 0}
 --- !u!114 &114642797174788100

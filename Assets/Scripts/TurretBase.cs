@@ -19,7 +19,7 @@ public class TurretBase : MonoBehaviour {
 
     public GameObject bulletPrefab;
     public Transform firePoint;
-
+    public GameObject Circle;
 
     public int GetSellAmount()
     {
@@ -75,6 +75,43 @@ public class TurretBase : MonoBehaviour {
     {
         Destroy(gameObject);
         gameMaster.GetComponent<GameMaster>().goldupdate(GetSellAmount());
+    }
+    public void UpdateRange()
+
+
+
+    {
+
+        float Scale = range / transform.localScale.x * 2f;
+
+        Circle.transform.localScale = new Vector3(Scale, Scale, Scale);
+
+
+
+    }
+
+
+
+    public void ToggleRange()
+
+    {
+
+        if (Circle.gameObject.activeSelf)
+
+        {
+
+            Circle.SetActive(false);
+
+        }
+
+        else
+
+        {
+
+            Circle.SetActive(true);
+
+        }
+
     }
 
     void Start ()

@@ -22,7 +22,7 @@ public class TextChanger : MonoBehaviour {
 
     public void ChangeText(int id)
     {
-        turret TurretScript = BuildManager.instance.standardTurretPrefab.GetComponent<turret>();
+        TurretBase TurretScript = BuildManager.instance.standardTurretPrefab.GetComponent<TurretBase>();
         if (id == 0)
         {
             TurretTextBox.text = "DAMAGE: " + "\nFIRERATE: " + TurretScript.fireRate.ToString() + "\nRANGE: " + TurretScript.range.ToString();
